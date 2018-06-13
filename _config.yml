@@ -18,7 +18,7 @@ repository: 2econsulting/2econsulting.github.io # ex. DONGChuan/DONGChuan.github
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
 # For production, use your github page url. ex. http://dongchuan.github.io
-url: http://2econsulting.github.io
+url: 
 
 ## Gem
 gems:
