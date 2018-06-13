@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 자동변수생성(rAutoFE) R패키지 개발 
-category: github 
-tags: [github, jekyll]
+category: featureEngineering 
+tags: [featureEngineering, R, data.table, H2O]
 no-post-nav: true
 ---
 

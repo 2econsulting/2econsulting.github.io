@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 자동변수선택(rAutoFS) R패키지 개발 
-category: github 
-tags: [github, jekyll]
+category: featureSelection 
+tags: [featureSelection, R, H2O]
 no-post-nav: true
 ---
 
