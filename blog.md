@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ¿¬±¸ °á°ú
+title: ì—°êµ¬ ê²°ê³¼ 
 menu: blog
 css: ['blog-page.css']
 ---
