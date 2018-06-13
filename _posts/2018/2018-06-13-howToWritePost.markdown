@@ -10,7 +10,7 @@ no-post-nav: true
 
 파일 저장 포멧은 다음과 같습니다. "yyyy-mm-dd-파일명.markdown" 예. 2018-06-13-sample.markdown
 
-파일 저장 후, commit & push하면 글이 업로드 됩니다. :laughing: 
+파일 저장 후, commit & push하면 글이 업로드 됩니다. 
 
     $git status
     $git add .
