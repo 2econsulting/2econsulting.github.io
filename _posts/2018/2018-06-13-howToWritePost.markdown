@@ -1,6 +1,6 @@
 ---
 layout: post
-title: u"글쓰는 방법"
+title: 글 쓰는 방법 
 category: github 
 tags: [github, jekyll]
 ---
