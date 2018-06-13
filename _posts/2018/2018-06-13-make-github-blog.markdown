@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "github에 jekyll 테마 사용해서 DS랩 블로그 생성" 
+title: make github blog 
 category: github 
 tags: [github, jekyll]
 ---
+
+test
 
 {% highlight ruby %}
 def show
