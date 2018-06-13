@@ -8,8 +8,10 @@
 # Site settings
 title: 머신러닝, 딥러닝, 인공지능 연구소 # ex. I m Chuan
 name: 투이컨설팅 DS랩 # ex. DONGChuan
+email: jacobgreen1984@2e.co.kr
+location: Seoul # ex. Nice, France
 company: 투이컨설팅
-company_url: www.2e.co.kr
+company_url: https://www.2e.co.kr
 github_url: https://github.com/2econsulting # ex. https://github.com/DONGChuan
 github_username: 2econsulting # ex. DONGChuan
 favicon: favicon.png # Image must be in assets/images
@@ -18,7 +20,7 @@ repository: 2econsulting/2econsulting.github.io # ex. DONGChuan/DONGChuan.github
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
 # For production, use your github page url. ex. http://dongchuan.github.io
-url: 
+# url: 
 
 # encoding type
 encoding: UTF-8
