@@ -1,18 +1,9 @@
 {% assign sorted_repos = (site.github.public_repositories | sort: 'stargazers_count') | reverse | where: "fork", "false" %}
 
-<style> 
-#jacobFavoriteCss1 {
-    color: #fff;
-    text-align: center;
-    background-color: #159957;
-    background-image: linear-gradient(120deg, #155799, #159957);
-}
-</style>
-
 <div id="container-open-source">
-    <section class="jumbotron", id="jacobFavoriteCss1">
+    <section class="jumbotron">
         <div class="container">
-            <div id="jumbotron-meta-info">
+            <div id="jumbotron-meta-info"> 
                 <h1>Open Source Projects</h1>
                 <span class="meta-info">
                     We have <span class="repo-count badge">{{ sorted_repos.size }}</span> projects on Github

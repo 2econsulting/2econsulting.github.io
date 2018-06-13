@@ -74,7 +74,7 @@ navs:
     label: About
 
 # Sidebar to show popular repo
-side_bar_repo_limit: 3 # Number of repos to show
+side_bar_repo_limit: 7 # Number of repos to show
 
 # Google Analytics
 analytics :
