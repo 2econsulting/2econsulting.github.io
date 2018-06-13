@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 글 쓰는 방법 
+title: 깃허브 블러그 글 쓰는 방법 
 category: github 
 tags: [github, jekyll]
 no-post-nav: true
