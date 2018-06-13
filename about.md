@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About 2e Consulting - Data Science Laboratory
+title: DS랩 소개
 menu: about
 subtitle:   <h3>회사소개서 다운로드</h3>
             <a role="button" class="btn btn-primary hvr-grow-shadow" href="/assets/files/2e_profile_2018_v0.99_KOR.pdf" target="_blanks">
