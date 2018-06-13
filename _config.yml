@@ -20,6 +20,9 @@ repository: 2econsulting/2econsulting.github.io # ex. DONGChuan/DONGChuan.github
 # For production, use your github page url. ex. http://dongchuan.github.io
 url: 
 
+# encoding type
+encoding: UTF-8
+
 ## Gem
 gems:
   - jekyll-paginate
