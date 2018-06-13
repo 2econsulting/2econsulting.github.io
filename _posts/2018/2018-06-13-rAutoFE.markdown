@@ -6,14 +6,44 @@ tags: [github, jekyll]
 no-post-nav: true
 ---
 
-test
+데이터 분석에서 파생변수를 생성하는 과정은 매우 중요하고 노력과 시간이 많이 필요한 작업입니다.
 
-{% highlight ruby %}
-def show
-  @widget = Widget(params[:id])
-  respond_to do |format|
-    format.html # show.html.erb
-    format.json { render json: @widget }
-  end
-end
-{% endhighlight %}
+rAutoFE(auto feature engineering in R)는 다양한 변수를 자동으로 생성해주는 R패키지 입니다.
+
+rAutoFE 패키지를 통해서 생성되는 파생변수의 종류는 다음과 같습니다:
+
+1. numeric feature transformation
+2. numeric feature binning
+3. categorical feature encoding (frequency-based)
+4. categorical feature encoding (target-based)
+5. weight of evidence features
+6. interaction features
+7. reduce the number of levels for catogorical features
+
+rAutoFE 패키지 설치 방법:
+```r
+library(devtools)
+install_github("2econsulting/rAutoFE")
+library(rAutoFE)
+```
+
+rAutoFE 패키지 사용 방법:
+```r
+library(data.table)
+library(rAutoFE)
+library(rAutoFS)
+library(h2o)
+savePath <- "c:/tmp"
+dir.create(savePath)
+data(churn)
+churn <- as.data.table(churn)
+churn[, Area.Code:=as.factor(Area.Code)]
+splits <- splitFrame(dt=churn, ratio = c(0.5, 0.2), seed=1234)
+train <- splits[[1]]
+valid <- splits[[2]]
+test  <- splits[[3]]
+y = "Churn."
+x = colnames(train)[colnames(train)!=y]
+h2o.init()
+dataset <- autoFE(train=train, valid=valid, test=test, x=x, y=y, savePath=savePath, verbose=TRUE)
+```
