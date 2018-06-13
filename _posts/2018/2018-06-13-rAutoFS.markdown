@@ -3,6 +3,7 @@ layout: post
 title: R을 사용한 자동변수선택(rAutoFS) 패키지 소개  
 category: github 
 tags: [github, jekyll]
+no-post-nav: true
 ---
 
 test

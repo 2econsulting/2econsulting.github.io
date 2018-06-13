@@ -3,6 +3,7 @@ layout: post
 title: 글 쓰는 방법 
 category: github 
 tags: [github, jekyll]
+no-post-nav: true
 ---
 
 test

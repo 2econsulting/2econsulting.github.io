@@ -3,6 +3,7 @@ layout: post
 title: 깃허브 블러그 만드는 방법  
 category: github 
 tags: [github, jekyll]
+no-post-nav: true
 ---
 
 test
