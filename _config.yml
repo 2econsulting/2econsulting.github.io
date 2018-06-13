@@ -6,10 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: 머신러닝, 딥러닝, 인공지능 연구 저장소 # ex. I m Chuan
+title: 머신러닝, 딥러닝, 인공지능 연구소 # ex. I m Chuan
 name: 투이컨설팅 DS랩 # ex. DONGChuan
 location: Seoul, South Korea # ex. Nice, France
-company: 2e Consulting
+company: 투이컨설팅
 company_url: www.2e.co.kr
 github_url: https://github.com/2econsulting # ex. https://github.com/DONGChuan
 github_username: 2econsulting # ex. DONGChuan
