@@ -6,13 +6,13 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Welcome to DS랩 블러그 # ex. I m Chuan
-name: 투이컨설팅 # ex. DONGChuan
+title: 머신러닝, 딥러닝, 인공지능 연구 저장소 # ex. I m Chuan
+name: 투이컨설팅 DS랩 # ex. DONGChuan
 location: Seoul, South Korea # ex. Nice, France
 company: 2e Consulting
 company_url: www.2e.co.kr
 github_url: https://github.com/2econsulting # ex. https://github.com/DONGChuan
-github_username: jacobgreen1984 # ex. DONGChuan
+github_username: 2econsulting # ex. DONGChuan
 description: Machine Learning, Deep Learning and Artificial Intelligence. 
 favicon: favicon.png # Image must be in assets/images
 repository: 2econsulting/2econsulting.github.io # ex. DONGChuan/DONGChuan.github.io
