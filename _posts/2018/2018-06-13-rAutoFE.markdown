@@ -1,6 +1,6 @@
 ---
 layout: post
-title: R을 사용한 자동변수생성(rAutoFE) 패키지 개발 
+title: 자동변수생성(rAutoFE) R패키지 개발 
 category: github 
 tags: [github, jekyll]
 no-post-nav: true
