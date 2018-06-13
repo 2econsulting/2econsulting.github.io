@@ -1,0 +1,9 @@
+---
+layout: post
+title: Light GBM in R
+category: LightGBM 
+tags: [LightGBM, R]
+no-post-nav: true
+---
+
+test
