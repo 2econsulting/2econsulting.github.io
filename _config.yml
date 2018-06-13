@@ -9,9 +9,8 @@
 title: 머신러닝, 딥러닝, 인공지능 연구소 # ex. I m Chuan
 name: 투이컨설팅 DS랩 # ex. DONGChuan
 email: jacobgreen1984@2e.co.kr
-location: Seoul # ex. Nice, France
 company: 투이컨설팅
-company_url: https://www.2e.co.kr
+company_url: http://www.2e.co.kr
 github_url: https://github.com/2econsulting # ex. https://github.com/DONGChuan
 github_username: 2econsulting # ex. DONGChuan
 favicon: favicon.png # Image must be in assets/images
