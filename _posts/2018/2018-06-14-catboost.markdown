@@ -1,8 +1,8 @@
 ---
 layout: post
-title: CatBoost in R
+title: CatBoost in R&Python
 category: CatBoost 
-tags: [CatBoost, R]
+tags: [CatBoost, R, Python]
 no-post-nav: true
 ---
 
