@@ -6,4 +6,73 @@ tags: [CatBoost, R, Python]
 no-post-nav: true
 ---
 
-test
+
+
+### 소개
+
+_Yandex_가 2017년 6월에 논문 [*CatBoost: unbiased boosting with categorical features*](https://arxiv.org/abs/1706.09516)에서 소개한 방법이다. CatBoost는 "Categorical Boost" 약자로, 이름에서부터 범주형 변수를 위한 Boosting 방법이라는 냄새를 풍기고 있다. 저자는 기존에 범주형 변수를 변환했던 방법 중에, "Target mean encoding"로 하면 정보유출(target leakage)이 생긴다고 주장한다. Target mean encoding이란, 범주별로 target 비율을 구해 해당 값으로 대체하는 것이다. 예를 들어, X 변수에 {A, A, A, B, B}가 있고, Target이 {1, 0, 0, 1, 0}이면, A 범주에서 Target 비율은 0.3333, B 범주에서 Target 비율은 0.5 이므로, {0.3333, 0.3333, 0.3333, 0.5, 0.5}로 변환이 된다. 또한, 정보유출로 인해 "conditional shift"가 발생하는데, 다시말해서 train 데이터와 test 데이터가 다른 분포를 가진다는 것이다. 서로 다른 분포를 가진다면, train 데이터에서 학습 된 모형이 test 데이터에 잘 맞기가 힘들 것이다. 개선방안으로 다음 2 step을 제안한다.
+
+- __Ordered TBS(Target-Based Statistics)__
+- __Ordered boosting__
+
+먼저, Ordered TBS에 대해서 알아보자. 흥미로운 아이디어는, 변환하기 전에 데이터를 랜덤하게 섞는다는 것이다. 섞은 데이터에서 다음 식을 이용해 변환을 한다. 
+
+![수식](../../_img/catboost/03.png)
+
+여기서 $$[x_{\sigma_j,k} = x_{\sigma_p,k}]$$ 의미는, 랜덤하게 재배치한 후 위에서부터 차례로 내려오면서 계산을 한다고 생각하면 된다. 이런 수식을 말로만 풀면 어려우니, _Yandex_ 홈페이지에 있는 [변환 예시](https://tech.yandex.com/catboost/doc/dg/concepts/algorithm-main-stages_cat-to-numberic-docpage/#algorithm-main-stages_cat-to-numberic)를 보면서 설명한다.
+
+
+
+![예시1](../../_img/catboost/01.png)
+
+위에 예시에서 $$f_n $$이 우리가 최종적으로 변환해야 할 범주형 변수이고, 데이터는 한번 랜덤으로 재배치가 끝난 상태이다. 간단하게 만들기 위해 $$a = 1$$ 로 놓고 다음과 같이 바꿔보자.
+
+$$avg\_target = {countInClass + prior \over totalCount + 1} $$
+
+- $$countInClass$$ : 현재 행에 있는 범주 기준으로 이전까지 target '1'(or True) 갯수
+
+- $$prior$$ : 미리 지정. (예시에서는 0.05)
+
+- $$totalCount$$ : 현재 행에 있는 범주 기준으로 이전까지 해당 범주 갯수
+
+  
+
+이를 반영하면 아래와 같이 변경된다. 아래에 행마다 설명을 달아놓았으니 참고해서 이해하면 더 쉬울거라 생각한다.
+
+![예시2](../../_img/catboost/02.png)
+
+#### 설명
+
+1. rock : 처음등장. 0.05
+2. indie : 처음증장. 0.05
+3. rock : $${(0 + 0.05) \over (1+1)} = 0.025$$ (rock 기준 이전에 target = 0번, rock = 1번 등장)
+4. rock  : $${(1 + 0.05) \over (2+1)} = 0.35$$ (rock 기준 이전에 target = 1번, rock = 2번 등장)
+5. pop : 처음등장. 0.05
+6. indie : $${(0 + 0.05) \over (1+1)} = 0.025$$ (indie 기준 이전에 target = 0번, indie = 1번 등장)
+7. rock : $${(2 + 0.05) \over (3+1)} = 0.5125$$ (rock 기준 이전에 target = 2번, rock = 3번 등장)
+
+
+
+후에 설명드릴 내용은, __Ordered Boosting__에 대한 내용이다. 이는 overfitting 을 방지하기 위한 방법으로 다소 복잡해 본 포스팅에서는 간단한 개념만 설명한다. 기존 Boosting 방법은 만약 k번째 tree를 나누었다면 나눈 후에 오차를 계산해 가중치 업데이트를 했다. 하지만 이렇게 오차를 구하면 편향이 발생돼 train 데이터에만 잘 맞을 수 있다는 단점이 있다(overfitting). 왜냐하면 k번 째 tree를 나눴을 때의 오차가 train과 test에서 같다고 볼 수 없기 때문이다. 따라서 저자는 논문에서, 학습시에 k번 째 관측치는 제외한 (k-1)까지의 관측으로 오차를 구해 "불편 잔차(unbiased residual)"를 구하고 가중치를 업데이트해야 overfitting을 방지할 수 있다고 주장한다.
+
+논문의 핵심 주제인 __Ordered TBS__와 __Ordered Boosting__에 대해서 간단히 알아보았다.
+
+
+
+### 장단점
+
+장점으로는, 범주형 변수를 변환할 때 기존 방법대비 정보유출을 덜 했다는 점이다. 어쨋든 target을 가지고 변환을 했기 때문에 정보유출이 아예 되지 않았다고 하기는 곤란하다. 하지만 순열로 데이터의 배열을 재배치한 후 인코딩 작업을 여러번 반복하면서 변환을 했다는 점이 흥미롭고 충분한 장점이 된다고 생각한다. 다만, 데이터가 n개가 있을 시 순열로 가능한 경우의 수는 n!(n factorial)이다. n이 100만 되어도, $$ 9.33 \times 10^{157} $$ 이라는 어마어마한 경우의 수가 나온다. encoding을 할 때 배열된 순서에 따라 달라지기 때문에, 과연 경우의수를 몇번 뽑아서 학습을 해야 괜찮은지에 대한 기준이 애매하다는 점이 단점이다.
+
+실제 샘플데이터(Churn)로 CatBoost, Random Forest, GBM을 비교 결과 CatBoost가 속도가 상당히 느렸다. 전부 default로 된 parameter를 이용했는데, CatBoost는 20초대, 다른 2개는 1초 근방으로 거의 20배 차이가 난다. 이는 CatBoost가 default iteration이 1000번으로 설정 되어있기 때문이다. 경우의 수가 워낙 방대하기 때문에, 어느정도 많이 돌려야 결과를 신뢰할 수 있다. 따라서 일부러 큰 숫자로 설정한 것으로 추정된다. 자세한 코드 및 설명은 맨 아래 링크에 첨부되어 있다.
+
+
+
+### 설치 방법(in python)
+
+`pip install catboost`
+
+
+
+### 학습 (예측성능, 속도) 비교
+
+[Jupyter notebook 참고](https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoost.ipynb)
