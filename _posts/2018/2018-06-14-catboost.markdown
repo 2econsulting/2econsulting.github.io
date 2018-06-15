@@ -67,14 +67,25 @@ $$avg\_target = {countInClass + prior \over totalCount + 1} $$
 
 실제 샘플데이터(Churn)로 CatBoost, Random Forest, GBM을 비교 결과 CatBoost가 속도가 상당히 느렸다. 전부 default로 된 parameter를 이용했는데, CatBoost는 20초대, 다른 2개는 1초 근방으로 거의 20배 차이가 난다. 이는 CatBoost가 default iteration이 1000번으로 설정 되어있기 때문이다. 경우의 수가 워낙 방대하기 때문에, 어느정도 많이 돌려야 결과를 신뢰할 수 있다. 따라서 일부러 큰 숫자로 설정한 것으로 추정된다. 자세한 코드 및 설명은 맨 아래 링크에 첨부되어 있다.
 
+----
+
+### Python
+* 설치 방법
+
+  `pip install catboost`
+
+* 학습 (예측성능, 속도) 비교 (아래 Jupyter notebook 첨부)
+
+  [CatBoost in Python](https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoost.ipynb)
+
+----
+
+### R
+* 설치방법
+  * 아래 Jupyter notebook 참고
+* 학습 (예측성능, 속도) 비교 (아래 Jupyter notebook 첨부)
+
+  [CatBoost in R](https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoost in R.ipynb)
 
 
-### 설치 방법(in python)
 
-`pip install catboost`
-
-
-
-### 학습 (예측성능, 속도) 비교
-
-[Jupyter notebook 참고](https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoost.ipynb)
