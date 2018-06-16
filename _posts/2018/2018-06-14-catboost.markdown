@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CatBoost in R & Python (GBM vs CatBoost)
+title: CatBoost in R & Python
 category: CatBoost 
 tags: [CatBoost, R, Python]
 no-post-nav: true
