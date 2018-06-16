@@ -6,16 +6,12 @@ tags: [CatBoost, R, Python]
 no-post-nav: true
 ---
 
-새로운 머신러닝 알고리즘 CatBoost가 등장했습니다. ^-^ 러시아 과학자가 개발한 CatBoost는 Tree Boosting 계열의 최신 머신러닝 알고리즘 입니다. 
-
-![alt text](https://github.com/2econsulting/2econsulting.github.io/blob/master/_img/catboost.png "image")
-
-최근 들어 Tree Boosting 계열의 머신러닝 알고리즘이 활발하게 연구되고 있습니다. 이는 아마도 XGBoost가 캐글 대회에서 수차례 winning solution으로 검증되면서 많은 과학자들이 XGBoost와 같은 Tree Boosting 머신러닝 기법에 많은 관심을 갖고 있는 것 같습니다.  
+새로운 머신러닝 알고리즘 CatBoost가 등장했습니다. 러시아 과학자가 개발한 CatBoost는 Tree Boosting 계열의 최신 머신러닝 알고리즘 입니다. 최근 들어 Tree Boosting 계열의 머신러닝 알고리즘이 활발하게 연구되고 있습니다. 이는 아마도 XGBoost가 캐글 대회에서 수차례 winning solution으로 검증되면서 많은 과학자들이 XGBoost와 같은 Tree Boosting 머신러닝 기법에 많은 관심을 갖고 있는 것 같습니다.  
 
 > Tree Boosting 계열의 머신러닝 알고리즘 변천사 (GBM -> XGBoost -> Light GBM -> CatBoost)  
 
 
-### CatBoost의 장점
+#### CatBoost의 장점
 특히 CatBoost의 full name은 Categorical Boost으로 범주형 변수가 많은 데이터셋에서 예측 성능이 우수하다고 합니다. 
 * 높은 예측 성능 
 * 범주형 변수를 자동으로 전처리
@@ -24,7 +20,7 @@ no-post-nav: true
 * 출처 : https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/
 
 
-### 성능비교 (RF vs GBM vs CatBoost)
+#### 성능비교 (RF vs GBM vs CatBoost)
 Tree기반의 대표적인 머신러닝 알고리즘에는 Random Forest(RF)와 Gradient Boosting Machine(GBM)이 존재합니다. 
 CatBoost가 RF와 GBM과 비교해서 속도 및 예측 성능의 차이를 비교하였습니다. 
 
@@ -38,14 +34,14 @@ CatBoost가 RF와 GBM과 비교해서 속도 및 예측 성능의 차이를 비�
 | CatBoost in R | 29.73 | 0.9259 | 0.1565 |
 
 
-학습 데이터 소개입니다. 
+#### 학습 데이터 소개 
 * churn dataset 
 * 3333 rows
 * Y is binary, X consists of 15 numeric and 4 categorical features
 * 출처 : yhat (https://github.com/yhat/demo-churn-pred/blob/master/model/churn.csv)
 
 
-CatBoost 설치 방법 및 전체 분석 코드 입니다. 
+#### CatBoost 설치 방법 및 전체 분석 코드 
 * CatBoost in Python https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoostPy.ipynb
 * CatBoost in R https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoostR.ipynb
 
