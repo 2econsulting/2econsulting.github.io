@@ -6,9 +6,9 @@ tags: [CatBoost, R, Python]
 no-post-nav: true
 ---
 
-새로운 머신러닝 알고리즘 CatBoost가 등장했습니다. 러시아 과학자가 개발한 CatBoost는 Tree Boosting 계열의 최신 머신러닝 알고리즘 입니다. 최근 들어 Tree Boosting 계열의 머신러닝 알고리즘이 활발하게 연구되고 있습니다. 이는 아마도 XGBoost가 캐글 대회에서 수차례 winning solution으로 검증되면서 많은 과학자들이 XGBoost와 같은 Tree Boosting 머신러닝 기법에 많은 관심을 갖고 있는 것 같습니다.  
 
-> Tree Boosting 계열의 머신러닝 알고리즘 변천사 (GBM -> XGBoost -> Light GBM -> CatBoost)  
+새로운 머신러닝 알고리즘 CatBoost가 등장했습니다. 러시아 과학자가 개발한 CatBoost는 Tree Boosting 계열의 최신 머신러닝 알고리즘 입니다. 최근 들어 Tree Boosting 계열의 머신러닝 알고리즘이 활발하게 연구되고 있습니다. 이는 아마도 XGBoost가 캐글 대회에서 수차례 winning solution으로 검증되면서 많은 과학자들이 XGBoost와 같은 Tree Boosting 머신러닝 기법에 많은 관심을 갖고 있는 것 같습니다.  
+> Tree Boosting 계열의 머신러닝 알고리즘 변천사 : GBM -> XGBoost -> Light GBM -> CatBoost  
 
 
 #### CatBoost의 장점
