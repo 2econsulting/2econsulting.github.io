@@ -6,4 +6,4 @@ tags: [index, R]
 no-post-nav: true
 ---
 
-test
+연구 중, 업로드 예정일 2018년 6월 29일 
