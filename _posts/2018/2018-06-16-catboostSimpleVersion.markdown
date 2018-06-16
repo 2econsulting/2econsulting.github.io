@@ -12,6 +12,10 @@ no-post-nav: true
 
 <br>
 
+![01](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/catboost.png)
+
+<br>
+
 #### CatBoost의 장점
 특히 CatBoost의 full name은 Categorical Boost으로 범주형 변수가 많은 데이터셋에서 예측 성능이 우수하다고 합니다. 
 * 높은 예측 성능 
