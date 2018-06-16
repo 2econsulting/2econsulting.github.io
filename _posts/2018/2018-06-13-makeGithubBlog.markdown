@@ -6,6 +6,8 @@ tags: [github, jekyll]
 no-post-nav: true
 ---
 
+깃허브 계정과 연동되는 블로그 생성 방법을 공유합니다. 
+
 1. git 설치 
 https://gitforwindows.org/
 

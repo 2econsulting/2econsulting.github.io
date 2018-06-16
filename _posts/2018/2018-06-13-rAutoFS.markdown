@@ -6,14 +6,5 @@ tags: [featureSelection, R, H2O]
 no-post-nav: true
 ---
 
-test
+연구 중, 업로드 예정일 2018년 6월 29일 
 
-{% highlight ruby %}
-def show
-  @widget = Widget(params[:id])
-  respond_to do |format|
-    format.html # show.html.erb
-    format.json { render json: @widget }
-  end
-end
-{% endhighlight %}
