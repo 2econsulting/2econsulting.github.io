@@ -31,7 +31,7 @@ test  <- splits[[2]]
 
 # H2ORF & H2OGBM ----
 
-# split dataset 
+# convert data.frame to hex
 train_hex <- as.h2o(train)
 test_hex  <- as.h2o(test)
 
@@ -100,14 +100,14 @@ test_error <- read.table("CatBoost_output/test_error.tsv", sep = "\t", header = 
 CatBoost_Performance <- test_error[which.max(test_error$AUC), c("Logloss", "AUC")]
 
 # summary ---- 
-output <- data.frame(
+eval_metrics <- data.frame(
   model = c("H2ORF", "H2OGBM", "CatBoost"),
   time = c(H2ORF_Runtime, H2OGBM_Runtime, CatBoost_Runtime),
   Logloss = c(H2ORF_Performance$logloss, H2OGBM_Performance$logloss, CatBoost_Performance$Logloss),
   AUC = c(H2ORF_Performance$AUC, H2OGBM_Performance$AUC, CatBoost_Performance$AUC)
 )
-kable(output, format = "markdown")
-kable(output, format = "pandoc", caption="default trainining result")
+kable(eval_metrics, format = "markdown")
+kable(eval_metrics, format = "pandoc", caption="default trainining result")
 # Table: default trainining result
 # 
 # model      time                Logloss         AUC

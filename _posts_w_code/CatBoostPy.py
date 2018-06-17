@@ -1,84 +1,95 @@
+# title : CatBoost in Python
+# author : jacob
+# depends : catboost, h2o, sklearn, pandas, numpy, time
 
-fromfrom  catboostcatboos  import CatBoostClassifier, Pool
-import pandas as pd
+# libraries
+from catboost import CatBoostClassifier, Pool
 from sklearn.model_selection import train_test_split
+from h2o.estimators.gbm import H2OGradientBoostingEstimator 
+from h2o.estimators.random_forest import H2ORandomForestEstimator 
+import pandas as pd
 import numpy as np
-
 import time
+import h2o
 
-churn = pd.read_csv("../data/churn.csv")
+# start h2o 
+h2o.init()
+h2o.remove_all()
 
+# load data 
+churn = pd.read_csv("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/churn.csv")
+churn.info()
 
-XX  ==  churnchurn..dropdrop([(['Churn.''Churn. ], axis=1)
-y = churn['Churn.']
+# convert fake_num to factor
+churn.columns = churn.columns.str.replace(".","_")
+churn.Area_Code = churn.Area_Code.astype("category")
+
+# convert data.frame to hex
+churn_hex = h2o.H2OFrame(churn)
+
+# split dataset
+train_hex, valid_hex, test_hex = churn_hex.split_frame([0.5, 0.3], seed=1234)
+
+# set x and y 
+y = "Churn_"
+X = churn.columns[churn.columns != y].tolist()
+
+# train H2ORF
+start = time.time()
+H2ORF = H2ORandomForestEstimator(seed = 1234)
+H2ORF.train(X, y, training_frame=train_hex, validation_frame=valid_hex)
+H2ORF_Runtime = time.time() - start
+
+# performance H2ORF
+H2ORF_Logloss = H2ORF.model_performance(test_data=test_hex)["logloss"]
+H2ORF_AUC = H2ORF.model_performance(test_data=test_hex)["AUC"]
+
+# train H2OGBM
+start = time.time()
+H2OGBM = H2OGradientBoostingEstimator(seed = 1234)
+H2OGBM.train(X, y, training_frame=train_hex, validation_frame=valid_hex)
+H2OGBM_Runtime = time.time() - start
+
+# performance H2OGBM
+H2OGBM_Logloss = H2OGBM.model_performance(test_data=test_hex)["logloss"]
+H2OGBM_AUC = H2OGBM.model_performance(test_data=test_hex)["AUC"]
+
+# CatBoost ---- 
+
+# set x and y for CatBoost
+X = churn.drop(['Churn_'], axis=1)
+y = churn['Churn_']
+
+# CatBoost package needs {1, 0} target values for binary classification
 y = np.where(y == "True.", 1, 0)
 
+# split dataset
+X_train, X_validTest, y_train, y_validTest = train_test_split(X, y, train_size=0.5, test_size = 0.5, random_state=1234)
+X_valid, X_test, y_valid, y_test = train_test_split(X_validTest, y_validTest, train_size = 0.6, test_size = 0.4, random_state = 1234)
 
+# train CatBoost
+start = time.time()
+cat_features = np.where(X.dtypes.astype("str").isin(["category","object"]))[0]
+CatBoost = CatBoostClassifier(random_seed = 1234)
+CatBoost.fit(X = X_train, y = y_train, cat_features = cat_features, eval_set=(X_valid, y_valid))
+CatBoost_Runtime = time.time() - start
 
+# performance CatBoost
+test_pool = Pool(X_test, y_test, cat_features=cat_features)
+CatBoost_AUC = CatBoost.eval_metrics(test_pool, ['AUC'], plot=False)
+CatBoost_Logloss = CatBoost.eval_metrics(test_pool, ['Logloss'], plot=False)
 
-X_train, X_tmp, y_train, y_tmp = train_test_split(X, y, train_size=0.6, test_size = 0.4, random_state=1234)
-X_valid, X_test, y_valid, y_test = train_test_split(X_tmp, y_tmp, train_size = 0.5, test_size = 0.5, random_state = 1234)
-print("Train : {}".format(X_train.shape[0]))
-print("Valid : {}".format(X_valid.shape[0]))
-print("Test : {}".format(X_test.shape[0]))
+# summary ----- 
+H2ORF_Runtime
+H2ORF_Logloss
+H2ORF_AUC
+H2OGBM_Runtime
+H2OGBM_Logloss
+H2OGBM_AUC
+CatBoost_Runtime
+CatBoost_AUC
+CatBoost_Logloss
 
-
-categorical_features_indices = np.where(X.dtypes == object)[0]
-X.iloc[:,categorical_features_indices].head()
-
-
-start_time = time.time()
-ml_cb = CatBoostClassifier(random_seed = 1234)
-
-ml_cb_output = ml_cb.fit(X = X_train, 
-                         y = y_train, 
-                         cat_features = categorical_features_indices, 
-                         eval_set=(X_valid, y_valid),
-                         verbose=False,
-                         plot=False)
-print("Time : {}".format(time.time() - start_time))
-
-test_pool = Pool(X_test, y_test, cat_features=categorical_features_indices)
-type(test_pool)
-
-eval_metrics = ml_cb_output.eval_metrics(test_pool, ['AUC', 'Logloss'], plot=False)
-
-
-printprint(("catboost AUC : "catboos {}".format(eval_metrics['AUC'][-1]))
-print("catboost Logloss : {}".format(eval_metrics['Logloss'][-1]))
-
-
-import h2o
-from h2o.estimators.gbm import H2OGradientBoostingEstimator
-from h2o.estimators.random_forest import H2ORandomForestEstimator
-h2o.init()
-churn_hex = h2o.H2OFrame(churn)
-train, valid, test = churn_hex.split_frame([0.6, 0.2], seed=1234)
-
-X = churn_hex.col_names[:-1]
-y = churn_hex.col_names[-1]
-
-
-
-start_time = time.time()
-ml_rf = H2ORandomForestEstimator(seed = 1234)
-ml_rf.train(X, y, training_frame=train, validation_frame=valid)
-print("Time : {}".format(time.time() - start_time))
-
-performance_rf = ml_rf.model_performance(test_data=test)
-
-print("RandomForest AUC is : {}".format(performance_rf.auc()))
-print("RandomForest Logloss is : {}".format(performance_rf.logloss()))
-
-start_time = time.time()
-ml_gbm = H2OGradientBoostingEstimator(seed = 1234)
-ml_gbm.train(X, y, training_frame=train, validation_frame=valid)
-print("Time : {}".format(time.time() - start_time))
-
-
-performance_gbm = ml_gbm.model_performance(test_data=test)
-print("GBM AUC is : {}".format(performance_gbm.auc()))
-print("GBM Logloss is : {}".format(performance_gbm.logloss()))
 
 
 
