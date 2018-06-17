@@ -101,15 +101,20 @@ CatBoost_Performance <- test_error[which.max(test_error$AUC), c("Logloss", "AUC"
 
 # summary ---- 
 output <- data.frame(
-  model = c("H2ORF(default)", "H2OGBM(default)", "CatBoost(default)"),
+  model = c("H2ORF", "H2OGBM", "CatBoost"),
   time = c(H2ORF_Runtime, H2OGBM_Runtime, CatBoost_Runtime),
   Logloss = c(H2ORF_Performance$logloss, H2OGBM_Performance$logloss, CatBoost_Performance$Logloss),
   AUC = c(H2ORF_Performance$AUC, H2OGBM_Performance$AUC, CatBoost_Performance$AUC)
 )
 kable(output, format = "markdown")
-
-
-
+kable(output, format = "pandoc", caption="default trainining result")
+# Table: default trainining result
+# 
+# model      time                Logloss         AUC
+# ---------  ---------------  ----------  ----------
+# H2ORF      1.331979 secs     0.3894338   0.9105410
+# H2OGBM     1.355449 secs     0.2061134   0.9007459
+# CatBoost   28.898497 secs    0.1586252   0.9300781
 
 
 
