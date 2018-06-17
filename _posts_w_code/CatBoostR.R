@@ -61,8 +61,8 @@ H2OGBM <- h2o.gbm(
 H2OGBM_Runtime <- Sys.time() - start
 
 # performance H2ORF and H2OGBM 
-H2ORF_Performance <- h2o.performance(H2ORF, newdata = test_hex)@metrics[c("logloss", "AUC")]
-H2OGBM_Performance <- h2o.performance(H2OGBM, newdata = test_hex)@metrics[c("logloss", "AUC")]
+H2ORF_eval <- h2o.performance(H2ORF, newdata = test_hex)@metrics[c("logloss", "AUC")]
+H2OGBM_eval <- h2o.performance(H2OGBM, newdata = test_hex)@metrics[c("logloss", "AUC")]
 
 # CatBoost ----
 
@@ -97,24 +97,24 @@ CatBoost_Runtime <- Sys.time() - start
 
 # performance CatBoost
 test_error <- read.table("CatBoost_output/test_error.tsv", sep = "\t", header = TRUE)
-CatBoost_Performance <- test_error[which.max(test_error$AUC), c("Logloss", "AUC")]
+CatBoost_eval <- test_error[which.max(test_error$AUC), c("Logloss", "AUC")]
 
 # summary ---- 
 eval_metrics <- data.frame(
   model = c("H2ORF", "H2OGBM", "CatBoost"),
-  time = c(H2ORF_Runtime, H2OGBM_Runtime, CatBoost_Runtime),
-  Logloss = c(H2ORF_Performance$logloss, H2OGBM_Performance$logloss, CatBoost_Performance$Logloss),
-  AUC = c(H2ORF_Performance$AUC, H2OGBM_Performance$AUC, CatBoost_Performance$AUC)
+  runtime = c(H2ORF_Runtime, H2OGBM_Runtime, CatBoost_Runtime),
+  Logloss = c(H2ORF_eval$logloss, H2OGBM_eval$logloss, CatBoost_eval$Logloss),
+  AUC = c(H2ORF_eval$AUC, H2OGBM_eval$AUC, CatBoost_eval$AUC)
 )
 kable(eval_metrics, format = "markdown")
 kable(eval_metrics, format = "pandoc", caption="default trainining result")
 # Table: default trainining result
 # 
-# model      time                Logloss         AUC
+# model      runtime             Logloss         AUC
 # ---------  ---------------  ----------  ----------
-# H2ORF      1.331979 secs     0.3894338   0.9105410
-# H2OGBM     1.355449 secs     0.2061134   0.9007459
-# CatBoost   28.898497 secs    0.1586252   0.9300781
+# H2ORF      1.387038 secs     0.3894338   0.9105410
+# H2OGBM     1.348170 secs     0.2061134   0.9007459
+# CatBoost   28.865551 secs    0.1586252   0.9300781
 
 
 

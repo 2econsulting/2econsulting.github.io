@@ -76,19 +76,25 @@ CatBoost_Runtime = time.time() - start
 
 # performance CatBoost
 test_pool = Pool(X_test, y_test, cat_features=cat_features)
-CatBoost_AUC = CatBoost.eval_metrics(test_pool, ['AUC'], plot=False)
-CatBoost_Logloss = CatBoost.eval_metrics(test_pool, ['Logloss'], plot=False)
+CatBoost_eval = CatBoost.eval_metrics(test_pool, ['AUC','Logloss'], plot=False)
+maxAUC_index = np.argmax(CatBoost_eval['AUC'])
+CatBoost_AUC = CatBoost_eval['AUC'][maxAUC_index ]
+CatBoost_Logloss = CatBoost_eval['Logloss'][maxAUC_index]
 
 # summary ----- 
-H2ORF_Runtime
-H2ORF_Logloss
-H2ORF_AUC
-H2OGBM_Runtime
-H2OGBM_Logloss
-H2OGBM_AUC
-CatBoost_Runtime
-CatBoost_AUC
-CatBoost_Logloss
+d = {
+ "model" : ["H2ORF", "H2OGBM", "CatBoost"],
+ "runtime" : [H2ORF_Runtime, H2OGBM_Runtime, CatBoost_Runtime],
+ "Logloss" : [H2ORF_Logloss, H2OGBM_Logloss, CatBoost_Logloss],
+ "AUC" : [H2ORF_AUC, H2OGBM_AUC, CatBoost_AUC]
+}
+eval_metrics = pd.DataFrame(d, columns=['model', 'runtime', 'Logloss', 'AUC'])
+eval_metrics 
+#      model    runtime   Logloss       AUC
+#0     H2ORF   1.138052  0.261905  0.918125
+#1    H2OGBM   0.674695  0.200653  0.913656
+#2  CatBoost  22.625454  0.109811  0.952381
+
 
 
 
