@@ -116,5 +116,3 @@ kable(eval_metrics, format = "pandoc", caption="default trainining result")
 # H2OGBM     1.348170 secs     0.2061134   0.9007459
 # CatBoost   28.865551 secs    0.1586252   0.9300781
 
-
-
