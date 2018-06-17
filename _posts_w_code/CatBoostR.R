@@ -1,14 +1,18 @@
 # title : CatBoost in R
 # author : jacob
-# desc : compare CatBoost with H2ORF and H2OGBM 
+# depends : rAutoFE, catboost, h2o, knitr
 
-
-# library
-devtools::install_github('catboost/catboost', subdir = 'catboost/R-package')
-devtools::install_github("2econsulting/rAutoFE")
+# libraries 
+# devtools::install_github('catboost/catboost', subdir = 'catboost/R-package')
+# devtools::install_github("2econsulting/rAutoFE")
+# install.packages("knitr")
+rm(list=ls())
 library(rAutoFE)
 library(catboost)
 library(h2o)
+library(knitr)
+
+# start h2o 
 h2o.init()
 h2o.removeAll()
 
@@ -32,90 +36,80 @@ train_hex <- as.h2o(train)
 test_hex  <- as.h2o(test)
 
 # set x and y 
+target_idx <- grep("Churn.", colnames(churn))
 y <- colnames(train)[target_idx]
 x <- colnames(train)[-target_idx]
 
-# ml_rf
+# H2ORF
 start <- Sys.time()
-ml_rf <- h2o.randomForest(         
+H2ORF <- h2o.randomForest(         
   training_frame = train_hex,
   x=x,                        
   y=y,  
   seed = 1234
 )               
-runtime_rf <- Sys.time() - start
-cat(">> runtime_rf : ", runtime_rf, "\n")
+H2ORF_Runtime <- Sys.time() - start
 
-# ml_gbm
+# H2OGBM
 start <- Sys.time()
-ml_gbm <- h2o.gbm(         
+H2OGBM <- h2o.gbm(         
   training_frame = train_hex,   
   x=x,                        
   y=y,  
   seed = 1234
 )             
-runtime_gbm <- Sys.time() - start
-cat(">> runtime_gbm : ", runtime_gbm, "\n")
+H2OGBM_Runtime <- Sys.time() - start
 
-# compare CatBoost with H2ORF and H2OGBM 
-h2o.performance(ml_rf, newdata = test_hex)
-h2o.performance(ml_gbm, newdata = test_hex)
+# performance H2ORF and H2OGBM 
+H2ORF_Performance <- h2o.performance(H2ORF, newdata = test_hex)@metrics[c("logloss", "AUC")]
+H2OGBM_Performance <- h2o.performance(H2OGBM, newdata = test_hex)@metrics[c("logloss", "AUC")]
 
 # CatBoost ----
 
-# convert target data type 
-churn[,target_idx] <- ifelse(churn[,target_idx] == "True.", 1, 0)
-table(churn$Churn.)
+# CatBoost package needs {1, 0} target values for binary classification 
+train[,target_idx] <- ifelse(train[,target_idx] == "True.", 1, 0)
+test[,target_idx] <- ifelse(test[,target_idx] == "True.", 1, 0)
 
-# split dataset
-splits <- rAutoFE::splitFrame(dt = churn, ratio = c(0.7, 0.3), seed = 1234)
-train <- splits[[1]]
-test  <- splits[[2]]
-
-# set index 
-target_idx <- grep("Churn.", colnames(churn))
-category_index <- which(sapply(churn, is.factor))
-interger_index <- which(sapply(churn, is.integer))
-
-# convert inter to num 
-churn[, interger_index] <- sapply(churn[, interger_index], as.numeric)
-
-# train_pool
+# convert train data.frame to catboost.pool 
 train_pool <- catboost.load_pool(
   data = train[,-target_idx],
   label = train[,target_idx],
-  cat_features = category_index
+  cat_features = which(sapply(churn[, x], is.factor))
 )
 
-# test_pool
+# convert test data.frame to catboost.pool 
 test_pool <- catboost.load_pool(
   data = test[,-target_idx], 
   label = test[,target_idx], 
-  cat_features = category_index
+  cat_features = which(sapply(churn[, x], is.factor))
 )
 
 # train catboost
 start <- Sys.time()
-fit_params <- list(
+params <- list(
   loss_function = 'Logloss',
   random_seed = 1234,
   custom_loss = "AUC",
   train_dir = "CatBoost_output"
 )
-ml_catboost <- catboost.train(learn_pool=train_pool, test_pool=test_pool, params=fit_params)
-runtime_catboost <- Sys.time() - start
-runtime_catboost
+CatBoost <- catboost.train(learn_pool=train_pool, test_pool=test_pool, params=params)
+CatBoost_Runtime <- Sys.time() - start
 
-# variable importance 
-ml_catboost$feature_importances
-
-# predict
-prediction <- catboost.predict(ml_catboost, test_pool)
-head(prediction)
-
-# performance
+# performance CatBoost
 test_error <- read.table("CatBoost_output/test_error.tsv", sep = "\t", header = TRUE)
-test_error[which.min(test_error$Logloss),]
-test_error[which.max(test_error$AUC),]
+CatBoost_Performance <- test_error[which.max(test_error$AUC), c("Logloss", "AUC")]
+
+# summary ---- 
+output <- data.frame(
+  model = c("H2ORF(default)", "H2OGBM(default)", "CatBoost(default)"),
+  time = c(H2ORF_Runtime, H2OGBM_Runtime, CatBoost_Runtime),
+  Logloss = c(H2ORF_Performance$logloss, H2OGBM_Performance$logloss, CatBoost_Performance$Logloss),
+  AUC = c(H2ORF_Performance$AUC, H2OGBM_Performance$AUC, CatBoost_Performance$AUC)
+)
+kable(output, format = "markdown")
+
+
+
+
 
 
