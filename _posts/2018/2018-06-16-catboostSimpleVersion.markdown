@@ -50,6 +50,6 @@ CatBoost가 RF와 GBM과 비교해서 속도 및 예측 성능의 차이를 비�
 <br>
 
 #### CatBoost 설치 방법 및 전체 분석 코드 
-* CatBoost in Python https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoostPy.ipynb
-* CatBoost in R https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoostR.R
+* CatBoost in Python (https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoostPy.ipynb)
+* CatBoost in R (https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoostR.R)
 
