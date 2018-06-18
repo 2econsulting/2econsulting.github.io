@@ -33,3 +33,20 @@ rAutoML의  학습 프로세스는 다음과 같습니다.
 |H2OGBM_Random    | 0.9225640| 0.1522216|
 |H2OGBM_Bayesian  | 0.9262237| 0.1591523|
 
+<br>
+
+#### 학습 데이터 소개 
+* churn dataset 
+* 3333 rows
+* Y is binary, X consists of 15 numeric and 4 categorical features
+* 출처 : yhat (https://github.com/yhat/demo-churn-pred/blob/master/model/churn.csv)
+
+<br>
+
+#### rAutoML패키지 설치 방법
+```r
+library(devtools)
+install_github("2econsulting/rAutoML")
+library(rAutoML)
+```
+
