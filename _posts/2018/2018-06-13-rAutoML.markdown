@@ -18,6 +18,8 @@ rAutoML의  학습 프로세스는 다음과 같습니다.
 5. H2OGBM_Random : learn_rate, sample_rate, col_sample_rate, min_rows의 최적값 탐색  (Random Grid Search)
 6. H2OGBM_Bayesian : 소수점 단위로 정밀 튜닝 (Bayesian Grid Search)
 
+<br>
+
 > H2OGBM_Default -> H2OGBM_StopRules -> H2OGBM_CatEncode -> H2OGBM_MaxDepth -> H2OGBM_Random -> H2OGBM_Bayesian
 
 <br>
