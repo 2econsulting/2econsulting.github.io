@@ -10,15 +10,21 @@ no-post-nav: true
 DS랩에서 개발한 rAutoML(Auto Machine Learning in R)은 모델링 영역을 자동화 해주는 R패키지 입니다. 
 현재(2018-06) rAutoML에서 제공하는 머신러닝 알고리즘은 H2OGBM이고 추후 H2ORF, H2OXGB 등 추가 될 예정입니다. 
 
+<br>
+
 rAutoML의  학습 프로세스는 다음과 같습니다.
 > H2OGBM_Default -> H2OGBM_StopRules -> H2OGBM_CatEncode -> H2OGBM_MaxDepth -> H2OGBM_Random -> H2OGBM_Bayesian
 
-1) H2OGBM_Default : 디폴트 모형 생성 
-2) H2OGBM_StopRules : 학습 스탑 규칙 결정 (Cartesian Grid Search)
-3) H2OGBM_CatEncode : 범주형 변수의 최적의 전처리 방법 탐색 (Cartesian Grid Search)
-4) H2OGBM_MaxDepth : max_depth의 최적의 범위 탐색 (Cartesian Grid Search)
-5) H2OGBM_Random : learn_rate, sample_rate, col_sample_rate, min_rows의 최적값 탐색  (Random Grid Search)
-6) H2OGBM_Bayesian : 소수점 단위로 정밀 튜닝 (Bayesian Grid Search)
+<br>
+
+1. H2OGBM_Default : 디폴트 모형 생성
+2. H2OGBM_StopRules : 학습 스탑 규칙 결정 (Cartesian Grid Search)
+3. H2OGBM_CatEncode : 범주형 변수의 최적의 전처리 방법 탐색 (Cartesian Grid Search)
+4. H2OGBM_MaxDepth : max_depth의 최적의 범위 탐색 (Cartesian Grid Search)
+5. H2OGBM_Random : learn_rate, sample_rate, col_sample_rate, min_rows의 최적값 탐색  (Random Grid Search)
+6. H2OGBM_Bayesian : 소수점 단위로 정밀 튜닝 (Bayesian Grid Search)
+
+<br>
 
 #### rAutoML패키기를 사용한 GBM모형 튜닝 결과
 
@@ -30,5 +36,4 @@ rAutoML의  학습 프로세스는 다음과 같습니다.
 |H2OGBM_MaxDepth  | 0.9166058| 0.1754864|
 |H2OGBM_Random    | 0.9225640| 0.1522216|
 |H2OGBM_Bayesian  | 0.9262237| 0.1591523|
-
 
