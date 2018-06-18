@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 캐글 경진대회에서 10등안에 드는 방법 (using R)
+title: 캐글 경진대회에서 10등 안에 드는 방법 (using R)
 category: Kaggle 
 tags: [Kaggle, R]
 no-post-nav: true
