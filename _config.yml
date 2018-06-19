@@ -87,6 +87,6 @@ disqus-shortname: jacobgreen1984
 analytics :
   provider : google
   google :
-      tracking_id : 'tracking_id'  # ex. UA-72165600-X
+      tracking_id : 'UA-121059985-1'  # ex. UA-72165600-X
 
 
