@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Customer Effort Score in R
+title: Customer Effort Score
 category: index 
 tags: [index, R]
 no-post-nav: true

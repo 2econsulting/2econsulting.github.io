@@ -1,0 +1,10 @@
+---
+layout: post
+title: 자동변수선택(rAutoFS) R패키지 개발 
+category: featureSelection 
+tags: [featureSelection, R, H2O]
+no-post-nav: true
+---
+
+연구 중, 업로드 예정일 2018년 6월 29일 
+
