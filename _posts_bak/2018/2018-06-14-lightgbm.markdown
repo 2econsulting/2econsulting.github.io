@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Light GBM in R (GBM vs Light GBM)
+title: Light GBM in R and Python (GBM vs Light GBM)
 category: LightGBM 
 tags: [LightGBM, R]
 no-post-nav: true
