@@ -2,7 +2,6 @@
 # author : 2e Consulting
 # data desc : http://www.bigdatalab.ac.cn/benchmark/bm/dd?data=Ta-Feng 
 
-
 # 패키지 설치 
 install.packages("data.table")
 library(data.table)
