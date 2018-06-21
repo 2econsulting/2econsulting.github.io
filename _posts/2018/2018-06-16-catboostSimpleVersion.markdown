@@ -22,14 +22,17 @@ no-post-nav: true
 * 범주형 변수를 자동으로 전처리
 * 모델 튜닝이 간소화 (범주형 변수를 자동으로 전처리 해주니깐 그 부분에 대해서 따로 튜닝을 할 필요가 없습니다. GBM의 경우 항목이 많은 범주형 변수로 학습하는 경우 과적합이 쉽게 발생하는데 CatBoost는 이러한 문제를 보완한 알고리즘입니다.)
 * R 그리고 Python과 연동  
-* 출처 : https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/
+
+출처 : https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/
 
 <br>
 
 #### CatBoost의 장점 (추가)
 * CatBoost 개발자에 의하면 모델 튜닝 없이 default값으로만 좋은 성능을 보여준다고 합니다. 또한 튜닝을 통해서 얻을 수 있는 효과는 크지 않다고 합니다. 
+
 > CatBoost gives great results with default values of the training parameters. In most cases parameter tuning does not significantly affect the resulting quality of the model and therefore is unnecessary. However, CatBoost provides a very flexible interface for parameter tuning and can be configured to suit different tasks.
-* 출처 : https://tech.yandex.com/catboost/doc/dg/concepts/parameter-tuning-docpage/#trees-number
+
+출처 : https://tech.yandex.com/catboost/doc/dg/concepts/parameter-tuning-docpage/#trees-number
 
 <br>
 
@@ -52,7 +55,7 @@ CatBoost가 RF와 GBM과 비교해서 속도 및 예측 성능의 차이를 비�
 * churn dataset 
 * 3333 rows
 * Y is binary, X consists of 15 numeric and 4 categorical features
-* 출처 : yhat (https://github.com/yhat/demo-churn-pred/blob/master/model/churn.csv)
+* URL : https://github.com/yhat/demo-churn-pred/blob/master/model/churn.csv
 
 <br>
 
