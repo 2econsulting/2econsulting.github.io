@@ -12,7 +12,7 @@ no-post-nav: true
 
 <h4>Tree Boosting 머신러닝 변천사</h4><br>
 
-<img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/catboostlightgbmxgb.png" alt="img" style="width:50%;"/>
+<img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/catboostlightgbmxgb.png" alt="img" style="width:90%;"/>
 
 <br>
 
