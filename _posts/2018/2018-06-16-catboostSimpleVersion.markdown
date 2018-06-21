@@ -26,6 +26,13 @@ no-post-nav: true
 
 <br>
 
+#### CatBoost의 장점 (추가)
+* CatBoost 개발자에 의하면 모델 튜닝 없이 default값으로만 좋은 성능을 보여준다고 합니다. 또한 튜닝을 통해서 얻을 수 있는 효과는 크지 않다고 합니다. 
+> CatBoost gives great results with default values of the training parameters. In most cases parameter tuning does not significantly affect the resulting quality of the model and therefore is unnecessary. However, CatBoost provides a very flexible interface for parameter tuning and can be configured to suit different tasks.
+* 출처 : https://tech.yandex.com/catboost/doc/dg/concepts/parameter-tuning-docpage/#trees-number
+
+<br>
+
 #### 성능비교 (RF vs GBM vs CatBoost)
 Tree기반의 대표적인 머신러닝 알고리즘에는 Random Forest(RF)와 Gradient Boosting Machine(GBM)이 존재합니다. 
 CatBoost가 RF와 GBM과 비교해서 속도 및 예측 성능의 차이를 비교하였습니다. 
