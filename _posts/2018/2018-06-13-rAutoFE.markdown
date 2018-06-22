@@ -10,7 +10,6 @@ no-post-nav: true
 
 <br>
 
-<h4>Why rAutoFE?</h4>
 > *We spent most of our efforts in feature engineering.*
 >
 > -- Xavier Cohort, [after winning one of many Kaggle competitions](http://blog.kaggle.com/2013/04/10/qa-with-xavier-conort/)
@@ -24,8 +23,9 @@ no-post-nav: true
 <h4>rAutoFE 소개</h4>
 rAutoFE(auto feature engineering in R)는 다양한 변수를 자동으로 생성해주는 R패키지 입니다.
 
-rAutoFE 패키지를 통해서 생성되는 파생변수의 종류는 다음과 같습니다.
+<br>
 
+<h4>rAutoFE 파생변수 목록</h4>
 1. numeric feature transformation
 2. numeric feature binning
 3. categorical feature encoding (frequency-based)
