@@ -40,7 +40,7 @@ time.time() - start_time # check time
 performance_GBM = ml_GBM.model_performance(test_data=test)
 
 # In h2o, there is no specific module for LightGBM yet.
-# Instead, using "tree_method='hist'" and "grow_policy='lossguide'" in H2OXGBoostEstimator offer "LightGBM algorithm"to us 
+# Instead, using "tree_method='hist'" and "grow_policy='lossguide'" in H2OXGBoostEstimator offer "LightGBM algorithm" to us 
 # you can find detail information in h2o website => http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/xgboost.html
 # parameter = default
 start_time = time.time()
