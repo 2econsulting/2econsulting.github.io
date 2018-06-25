@@ -13,7 +13,7 @@ import time
 h2o.init()
 
 # read data set
-churn = pd.read_csv("./churn.csv")
+churn = pd.read_csv("../data/churn.csv")
 
 # for using h2o, data must be "h2o.frame.H2OFrame"
 churn_hex = h2o.H2OFrame(churn)

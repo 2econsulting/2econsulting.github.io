@@ -9,8 +9,7 @@ h2o.init()
 h2o.removeAll()
 
 # read data set
-churn <- read.csv("./churn.csv")
-churn <- rbind(churn, churn)
+churn <- read.csv("../data/churn.csv")
 
 # for using h2o, data must be "h2o data frame"
 churn_hex <- as.h2o(churn)
