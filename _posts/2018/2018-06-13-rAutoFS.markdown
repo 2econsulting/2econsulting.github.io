@@ -15,7 +15,7 @@ rAutoFS(Auto Feature Selection in R)는 이러한 단점을 보완하는 차원�
 3. TOP N개의 모델의 변수 중요도 도출
 4. 도출 된 변수 중요도을 기준으로 vote방식으로 h2o.automl의 변수 중요도 종합
 
-rAutoFS::autoFS의 변수 중요도 결과는 다음과 같습니다.   
+rAutoFS::autoFS의 변수 중요도 결과는 다음과 같습니다. (패키지 example)   
 
 | rank|vi_GBM14       |vi_GBM0        |vi_GBM1        |vi_GBM23       |vi_GBM55       |vi             |
 |----:|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
