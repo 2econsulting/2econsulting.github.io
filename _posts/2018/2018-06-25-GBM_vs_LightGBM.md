@@ -6,7 +6,6 @@ tags: [LightGBM, R]
 no-post-nav: true
 ---
 
-### 소개
  Light GBM은 2014년 3월에 나온 XGBoost 알고리즘 이후, 2017년 1월에 발표된 알고리즘이다. GBM은 가지가 1번 분리될 때 2개씩 매번 분리가 되서 overfitting이 잘 일어난다. 하지만 LightGBM은 가지가 1번 분리(2개의 node 생성)될 때  모든 가지를 분리하지 않고 2개의 node 중 잘 맞는 node 기준으로만 나눈다. 전체적인 아키텍처는 다음과 같다.
 
 ![xgboost-lightgbm-21-638](https://user-images.githubusercontent.com/40010529/41837711-40f64140-7899-11e8-99b6-6c487a3c58c8.jpg)
