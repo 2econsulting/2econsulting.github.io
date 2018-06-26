@@ -18,8 +18,8 @@ Bayesian grid search의 특징은 최적의 하이퍼 파라미터를 찾는데 
 
 <br>
 
-#### bayesGridFun
 ```r
+# bayesGridFun
 bayesGridFun <- function(max_depth, min_rows, sample_rate, col_sample_rate){
   gbm <- h2o.gbm(
     x = x, y = y, seed = 1234,
@@ -40,11 +40,8 @@ bayesGridFun <- function(max_depth, min_rows, sample_rate, col_sample_rate){
   score <- h2o.auc(gbm, xval = T)
   list(Score = score, Pred  = 0)
 }
-```
-<br>
 
-#### bayesGridOptions
-```r
+# bayesGridOptions
 max_depth <- autoGBM_BestParams$Random_max_depth
 sample_rate <- autoGBM_BestParams$Random_sample_rate
 col_sample_rate <- autoGBM_BestParams$Random_col_sample_rate
@@ -55,12 +52,8 @@ bayesGridOptions <- list(
   sample_rate = c(sample_rate-0.1, min(sample_rate+0.1, 1)),
   col_sample_rate = c(col_sample_rate-0.1, min(col_sample_rate+0.1, 1))
 )
-```
 
-<br>
-
-#### bayesGridSearch
-```r
+# bayesGridSearch
 set.seed(1234)
 bayesGridSearch <- rBayesianOptimization::BayesianOptimization(
   FUN = bayesGridFun,
@@ -73,12 +66,7 @@ bayesGridSearch <- rBayesianOptimization::BayesianOptimization(
   verbose = TRUE
 )
 
-```
-
-<br>
-
-#### H2OGBM_Bayesian
-```r
+# H2OGBM_Bayesian
 H2OGBM_Bayesian <- h2o.gbm(
   x = x, y = y, seed = 1234,
   model_id = "H2OGBM_Bayesian",
@@ -104,6 +92,7 @@ autoGBM_BestParams['Bayes_max_depth'] <- as.numeric(bayesGridSearch$Best_Par["ma
 autoGBM_BestParams['Bayes_min_rows'] <- as.numeric(bayesGridSearch$Best_Par["min_rows"])
 autoGBM_BestParams['Bayes_sample_rate'] <- as.numeric(bayesGridSearch$Best_Par["sample_rate"])
 autoGBM_BestParams['Bayes_col_sample_rate'] <- as.numeric(bayesGridSearch$Best_Par["col_sample_rate"])
-``` 
+
+```
 
 <br>
