@@ -1,16 +1,17 @@
-<header class="site-header">
+<header class="site-header" style="background-color:white; margin-top:0">
 <!--<header class="site-header" style=background-color:white;>-->    
     
     <div class="container">
-        <a id="site-header-brand" href="/" title="{{ site.name }}">
-            <span class="octicon octicon-mark-github"></span> {{ site.name }}
-        </a>
+        <span id="site-header-brand">
+            <img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/2e.png"></img>
+        </span>
         <nav class="site-header-nav" role="navigation">
             {% for nav in site.navs %}
             <a href="{{ nav.href }}"
                class="{% if page.menu == nav.label %} selected {% endif %} site-header-nav-item hvr-underline-from-center"
                target="{{ nav.target | default: _self }}"
-               title="{{ nav.label }}">
+               title="{{ nav.label }}"
+               style="color:black">
                 {{ nav.label }}
             </a>
             {% endfor %}
