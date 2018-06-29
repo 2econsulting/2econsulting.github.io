@@ -34,6 +34,7 @@ no-post-nav: true
 || Funk SVD| 13.91| 0.9106 |
 || Random| 3.49| 1.3832 |
 || ALS| 13.14| 0.9032 |
+|rrecsys| itemAverage| 4.92| 0.9313 |
 || itemAverage| 7.37| 0.9614 |
 || userAverage| 6.95| 1.0140 |
 || globalAverage| 6.22| 1.0913 |
@@ -42,7 +43,6 @@ no-post-nav: true
 || FunkSVD| 31.36| 1.0811 |
 || SlopeOne| 15.48| 0.9028 |
 |recosystem|Matrix Factorization|36.35| 0.8512 |
-|rrecsys| itemAverage| 4.92| 0.9313 |
 |slimrec| Sparse LInear Method| 25.52| 2.2196 |
 |SVDApproximation| SVDApproximation| 4.92| 0.9313 |
 
@@ -51,3 +51,5 @@ no-post-nav: true
 ### 전체 분석 코드
 
 * [Comparison of Recommend system packages in R](https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/Comparison_Of_RecommendSystem.R)
+
+<br>
