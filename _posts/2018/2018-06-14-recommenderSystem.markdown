@@ -25,7 +25,7 @@ no-post-nav: true
 
 #### 패키지 성능 비교 
 
-| Package Name | Algorithm | time(min) | RMSE |
+| package name | algorithm | time(min) | RMSE |
 |------------- | ----------| --------- | ---- |
 |recommenderlab|Most Popular| 4.27| 0.9725 |
 || User-Based CF| 5.03| 1.0464 |
