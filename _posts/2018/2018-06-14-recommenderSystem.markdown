@@ -6,9 +6,7 @@ tags: [recommenderSystem, R]
 no-post-nav: true
 ---
 
-연구 중, 업로드 예정일 2018년 6월 29일 
-
-#### 추천시스템 R패키지에서 제공하는 추천 엔진 속도 및 성능 비교 연구
+### 추천시스템 R패키지에서 제공하는 추천 엔진 속도 및 성능 비교 연구
 
 |  package name | package description  |
 | ------------ | ------------ |
@@ -19,7 +17,8 @@ no-post-nav: true
 | slimrec | Sparse Linear Method to Predict Ratings and Top-N Recommendations |
 
 ### 추천시스템 R패키지 성능비교
-추천 알고리즘 R 패키지의 성능을 비교해 보면 다음과 같습니다.
+
+100만 행이 넘는 MovieLense 데이터셋을 이용해 추천 알고리즘 R 패키지들 중 recommenderlab, recosystem, rrecsys, slimrec, SVDApproximation 의 성능을 비교해 보면 다음과 같습니다.
 
 #### recommenderlab
 | Algorithm               | time(min) | RMSE   |
@@ -37,11 +36,6 @@ no-post-nav: true
 | ----------------------- | --------- | ------ |
 | Matrix Factorization    | 36.35     | 0.8512 |
 
-#### SVDApproximation
-| Algorithm               | time(min) | RMSE   |
-| ----------------------- | --------- | ------ |
-| SVDApproximation        | 4.92      | 0.9313 |
-
 #### rrecsys
 | Algorithm               | time(min) | RMSE   |
 | ----------------------- | --------- | ------ |
@@ -51,7 +45,7 @@ no-post-nav: true
 | globalAverage           | 6.22      | 1.0913 |
 | IBKNN                   | 7.53      | 1.0853 |
 | UBKNN                   | 37.49     | 1.0196 |
-| FunkSVD                 | 9.65(sec) | 1.0811 |
+| FunkSVD                 | 31.36     | 1.0811 |
 | SlopeOne                | 15.48     | 0.9028 |
 
 #### slimrec
@@ -59,6 +53,10 @@ no-post-nav: true
 | ----------------------- | --------- | ------ |
 | Sparse LInear Method    | 25.52     | 2.2196 |
 
+#### SVDApproximation
+| Algorithm               | time(min) | RMSE   |
+| ----------------------- | --------- | ------ |
+| SVDApproximation        | 4.92      | 0.9313 |
 
 
 ### 전체 분석 코드
