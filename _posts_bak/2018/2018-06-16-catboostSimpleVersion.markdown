@@ -6,27 +6,33 @@ tags: [CatBoost, R, Python]
 no-post-nav: true
 ---
 
-
 새로운 머신러닝 알고리즘 CatBoost가 등장했습니다. 러시아 과학자가 개발한 CatBoost는 Tree Boosting 계열의 최신 머신러닝 알고리즘 입니다. 최근 들어 Tree Boosting 계열의 머신러닝 알고리즘이 활발하게 연구되고 있습니다. 이는 아마도 XGBoost가 캐글 대회에서 수차례 winning solution으로 검증되면서 많은 과학자들이 XGBoost와 같은 Tree Boosting 머신러닝 기법에 많은 관심을 갖고 있는 것 같습니다.  
-> Tree Boosting 계열의 머신러닝 알고리즘 변천사 : GBM -> XGBoost -> Light GBM -> CatBoost  
 
 <br>
 
-![01](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/catboost.png)
+<h4>Tree Boosting 머신러닝 변천사</h4><br>
+
+<img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/catboostlightgbmxgb.png" alt="img" style="width:90%;"/>
 
 <br>
 
-#### CatBoost의 장점
-특히 CatBoost의 full name은 Categorical Boost으로 범주형 변수가 많은 데이터셋에서 예측 성능이 우수하다고 합니다. 
+<h4>CatBoost의 장점</h4>
+특히 CatBoost의 full name은 Categorical Boost으로 범주형 변수가 많은 데이터셋에서 예측 성능이 우수하다고 합니다. [link](https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/)
 * 높은 예측 성능 
 * 범주형 변수를 자동으로 전처리
-* 모델 튜닝이 간소화 (범주형 변수를 자동으로 전처리 해주니깐 그 부분에 대해서 따로 튜닝을 할 필요가 없습니다. GBM의 경우 항목이 많은 범주형 변수로 학습하는 경우 과적합이 쉽게 발생하는데 CatBoost는 이러한 문제를 보완한 알고리즘입니다.)
+* 모델 튜닝이 간소화 (범주형 변수를 자동으로 전처리 해주니깐 그 부분에 대해서 따로 튜닝을 할 필요x)
 * R 그리고 Python과 연동  
-* 출처 : https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/
 
 <br>
 
-#### 성능비교 (RF vs GBM vs CatBoost)
+<h4>CatBoost의 장점 (추가)</h4>
+* CatBoost 개발자에 의하면 모델 튜닝 없이 default값으로만 좋은 성능을 보여준다고 합니다. 또한 튜닝을 통해서 얻을 수 있는 효과는 크지 않다고 합니다. [link](https://tech.yandex.com/catboost/doc/dg/concepts/parameter-tuning-docpage/#trees-number)
+
+> CatBoost gives great results with default values of the training parameters. In most cases parameter tuning does not significantly affect the resulting quality of the model and therefore is unnecessary. However, CatBoost provides a very flexible interface for parameter tuning and can be configured to suit different tasks.
+
+<br>
+
+<h4>성능비교 (RF vs GBM vs CatBoost)</h4>
 Tree기반의 대표적인 머신러닝 알고리즘에는 Random Forest(RF)와 Gradient Boosting Machine(GBM)이 존재합니다. 
 CatBoost가 RF와 GBM과 비교해서 속도 및 예측 성능의 차이를 비교하였습니다. 
 
@@ -41,15 +47,8 @@ CatBoost가 RF와 GBM과 비교해서 속도 및 예측 성능의 차이를 비�
 
 <br>
 
-#### 학습 데이터 소개 
-* churn dataset 
-* 3333 rows
-* Y is binary, X consists of 15 numeric and 4 categorical features
-* 출처 : yhat (https://github.com/yhat/demo-churn-pred/blob/master/model/churn.csv)
+<h4>CatBoost 설치 방법 및 전체 분석 코드</h4>
+* [CatBoost in Python](https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoostPy.py)
+* [CatBoost in R](https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoostR.R)
 
 <br>
-
-#### CatBoost 설치 방법 및 전체 분석 코드 
-* CatBoost in Python (https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoostPy.py)
-* CatBoost in R (https://github.com/2econsulting/2econsulting.github.io/blob/master/_posts_w_code/CatBoostR.R)
-
