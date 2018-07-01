@@ -1,6 +1,5 @@
 ---
 layout: default
-menu: home
 css: ['index.css', 'sidebar-popular-repo.css']
 ---
 
@@ -30,33 +29,33 @@ css: ['index.css', 'sidebar-popular-repo.css']
         <!-- Post List -->
         <div class="col-md-8">
 
-        	<form action="/search.html" method="get">
-			  <label for="search-box"></label>
-			  <input type="text" id="search-box" name="query">
-			  <input type="submit" value="검색">
-			</form>
+          <form action="/search.html" method="get">
+            <label for="search-box"></label>
+            <input type="text" id="search-box" name="query">
+            <input type="submit" value="검색">
+          </form>
 
-            <ol class="post-list">
-                {% for post in paginator.posts %}
-                <li class="post-list-item">
-                    <h2 class="post-list-title">
-                        <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}" style="line-height:normal;">{{ post.title }}</a>
-                    </h2>
-                    <p class="post-list-description" style="overflow:hidden ;position:relative; line-height:1.3em; max-height:3.6em; text-align:justify; margin-right:-1em; padding-right:1em;">
-                        {{ post.excerpt | strip_html | strip }}
-                    </p>
-                    <p class="post-list-meta">
-                        <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
-                    </p>
-                </li>
-                {% endfor %}
-            </ol>
+          <br>
 
-            <!-- Pagination -->
-            {% include pagination.html %}
+          <ul id="search-results"></ul>
 
-            <!-- Comments -->
-            {% include disqus-comments.html %}
+          <script>
+            window.store = {
+              {% for post in site.posts %}
+                "{{ post.url | slugify }}": {
+                  "title": "{{ post.title | xml_escape }}",
+                  "author": "{{ post.author | xml_escape }}",
+                  "category": "{{ post.category | xml_escape }}",
+                  "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+                  "url": "{{ post.url | xml_escape }}"
+                }
+                {% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            };
+          </script>
+
+          <script src="/assets/js/lunr.min.js"></script>
+          <script src="/assets/js/search.js"></script>
 
         </div>
 
