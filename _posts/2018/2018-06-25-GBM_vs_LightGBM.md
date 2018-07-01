@@ -10,13 +10,13 @@ no-post-nav: true
 
 <br>
 
-#### light GBM 학습 방법
+#### Light GBM 구조
 
-![lightgbm](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/lightgbm.png)
+![Lightgbm](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/lightgbm.png)
 
 <br>
 
-#### XGBoost 학습 방법
+#### XGBoost 구조
 
 ![xgboost](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/xgboost.png)
 
