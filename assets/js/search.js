@@ -13,7 +13,7 @@
 
             searchResults.innerHTML = appendString;
         } else {
-            searchResults.innerHTML = '<li>검색 결과가 없습니다.</li>';
+            searchResults.innerHTML = '<li class="post-list-item">검색 결과가 없습니다.</li>';
         }
     }
 
