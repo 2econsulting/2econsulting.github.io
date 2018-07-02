@@ -44,7 +44,7 @@ no-post-nav: true
 |recosystem|Matrix Factorization|0.68| 0.8529 |
 |slimrec| Sparse LInear Method| 25.52| 2.2196 |
 |SVDApproximation| SVDApproximation| 4.92| 0.9313 |
-|SmartCat-Labs's Git R code)| ibcf| 0.64| 0.8971 |
+|SmartCat-Labs's Git R code| ibcf| 0.64| 0.8971 |
 || ubcf| 1.14| 0.9028 |
 
 <br>
