@@ -34,8 +34,7 @@ no-post-nav: true
 || Funk SVD| 13.91| 0.9106 |
 || Random| 3.49| 1.3832 |
 || ALS| 13.14| 0.9032 |
-|rrecsys| itemAverage| 4.92| 0.9313 |
-|| itemAverage| 7.37| 0.9614 |
+|rrecsys| itemAverage| 7.37| 0.9614 |
 || userAverage| 6.95| 1.0140 |
 || globalAverage| 6.22| 1.0913 |
 || IBKNN| 7.53| 1.0853 |
