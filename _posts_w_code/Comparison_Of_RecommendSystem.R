@@ -9,7 +9,6 @@ library(recosystem)
 library(SVDApproximation) 
 library(rrecsys)
 library(slimrec)
-
 # 1M MovieLense dataset.
 ratings <- fread("../data/movielense.csv")
 class(ratings)
@@ -95,14 +94,15 @@ write.table(ratings_train, file = "trainset.txt", sep = " ", row.names = FALSE, 
 write.table(ratings_test, file = "testset.txt", sep = " ", row.names = FALSE, col.names = FALSE)
 
 recc = Reco()
+start <- Sys.time()
 opts <- recc$tune(
   "trainset.txt", 
-  opts = list(dim = c(10, 20, 30), # latent factor
+  opts = list(dim = c(5, 10, 20, 30), # latent factor
               lrate = c(0.05), # gradient descent step rate
               costp_l1 = 0,
               costq_l1 = 0,
               nthread = 1, 
-              niter = 10, 
+              niter = 50, 
               nfold = 3, 
               verbose = FALSE)
 )
@@ -112,7 +112,7 @@ recc$train(
   "trainset.txt", 
   opts = c(opts$min, 
            nthread = 1, 
-           niter = 10, 
+           niter = 50, 
            verbose = FALSE)
 )
 outfile = tempfile()
