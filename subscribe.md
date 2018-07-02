@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Data Science Newletters
+title: Data Science Newsletter
 ---
 
 <!-- Begin MailChimp Signup Form -->
