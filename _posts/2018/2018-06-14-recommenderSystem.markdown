@@ -41,7 +41,7 @@ no-post-nav: true
 || UBKNN| 37.49| 1.0196 |
 || FunkSVD| 31.36| 1.0811 |
 || SlopeOne| 15.48| 0.9028 |
-|recosystem|Matrix Factorization|36.35| 0.8512 |
+|recosystem|Matrix Factorization|1.00| 0.8489 |
 |slimrec| Sparse LInear Method| 25.52| 2.2196 |
 |SVDApproximation| SVDApproximation| 4.92| 0.9313 |
 
