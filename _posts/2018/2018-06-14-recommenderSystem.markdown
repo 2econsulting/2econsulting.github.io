@@ -43,7 +43,7 @@ no-post-nav: true
 || FunkSVD| 31.36| 1.0811 |
 || SlopeOne| 15.48| 0.9028 |
 |recosystem|Matrix Factorization|0.68| 0.8529 |
-|slimrec| Sparse LInear Method| 25.52| 2.2196 |
+|slimrec| Sparse Linear Method| 25.52| 2.2196 |
 |SVDApproximation| SVDApproximation| 4.92| 0.9313 |
 |SmartCat-labs's Git R code| ibcf| 1.76| 0.8859 |
 || ubcf| 1.74| 0.8564 |
