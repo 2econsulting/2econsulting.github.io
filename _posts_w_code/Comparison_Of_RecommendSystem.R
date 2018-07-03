@@ -217,15 +217,57 @@ gc()
 set.seed(1)
 start <- Sys.time()
 model <- slim(dgCmtx,
-             alpha = 0.5, 
-             nonNegCoeff = TRUE, 
-             coeffMat = TRUE, 
-             returnMat = TRUE, 
-             computeRMSE = TRUE, 
-             nproc = 1L,
-             progress = TRUE, 
-             check = TRUE, 
-             cleanup = FALSE)
+              alpha = 0.5, 
+              nonNegCoeff = TRUE, 
+              coeffMat = TRUE, 
+              returnMat = TRUE, 
+              computeRMSE = TRUE, 
+              nproc = 1L,
+              progress = TRUE, 
+              check = TRUE, 
+              cleanup = FALSE)
 end <- Sys.time()
 end - start
 model$nonZeroRMSE
+
+# SmartCat-labs’s Git R code ----
+source("../_posts_w_code/cf_algorithm.R")
+
+ratings <- fread("../data/movielense.csv")
+sparse_ratings <- sparseMatrix(
+  i = ratings$user, 
+  j = ratings$item, 
+  x = ratings$rating, 
+  dims = c(length(unique(ratings$user)), 
+           length(unique(ratings$item))),
+  dimnames = list(paste("u", 1:length(unique(ratings$user)), 
+                        sep = ""),
+                  paste("m", 1:length(unique(ratings$item)), 
+                        sep = "")
+  )
+)
+
+RecoCreate <- function(data, method){
+  Type <- c()
+  Time <- c()
+  rmse <- c()
+  for (i in method){
+    set.seed(1)
+    start <- Sys.time()
+    result <- evaluate_cf(ratings_matrix, number_of_folds = 10, alg_method = i, normalization = TRUE, 
+                          similarity_metric = cal_cos, k = 300, make_positive_similarities = FALSE, 
+                          rowchunk_size = 1000, columnchunk_size = 2000)
+    end <- Sys.time()
+    Type <- c(Type, i)
+    Time <- c(Time, end - start)
+    rmse <- c(rmse, result[[2]])
+  }
+  result <- data.frame(RecType = Type, 
+                       RunTime = Time, 
+                       RMSE = rmse)
+  print(result)
+  return(result)
+}
+
+method <- c("ibcf", "ubcf")
+result <- RecoCreate(ratings_matrix, method)
