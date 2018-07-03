@@ -1,3 +1,7 @@
+# title : collaboratory R code
+# writer : Hyunseo Kim
+# reference : https://github.com/smartcat-labs/collaboratory
+
 # ============================================================
 # Similarity measures for sparse matrices.
 # ============================================================
