@@ -270,4 +270,4 @@ RecoCreate <- function(data, method){
 }
 
 method <- c("ibcf", "ubcf")
-result <- RecoCreate(ratings_matrix, method)
+result <- RecoCreate(sparse_ratings, method)
