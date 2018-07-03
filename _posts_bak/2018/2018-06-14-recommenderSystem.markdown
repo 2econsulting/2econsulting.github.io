@@ -8,6 +8,7 @@ no-post-nav: true
 
 추천 R패키지 속도 및 성능 비교 연구 결과입니다.
 * 데이터셋 : MovieLense (100만행)
+* 컴퓨터 사양 : Core(TM) i7 and 32Gb RAM
 
 <br>
 
@@ -34,17 +35,23 @@ no-post-nav: true
 || Funk SVD| 13.91| 0.9106 |
 || Random| 3.49| 1.3832 |
 || ALS| 13.14| 0.9032 |
-|rrecsys| itemAverage| 4.92| 0.9313 |
-|| itemAverage| 7.37| 0.9614 |
+|rrecsys| itemAverage| 7.37| 0.9614 |
 || userAverage| 6.95| 1.0140 |
 || globalAverage| 6.22| 1.0913 |
 || IBKNN| 7.53| 1.0853 |
 || UBKNN| 37.49| 1.0196 |
 || FunkSVD| 31.36| 1.0811 |
 || SlopeOne| 15.48| 0.9028 |
-|recosystem|Matrix Factorization|36.35| 0.8512 |
+|recosystem|Matrix Factorization|0.68| 0.8529 |
 |slimrec| Sparse LInear Method| 25.52| 2.2196 |
 |SVDApproximation| SVDApproximation| 4.92| 0.9313 |
+<<<<<<< HEAD
+|SmartCat-Labs's Git R code)| ibcf| 1.76| 0.8859 |
+|| ubcf| 1.74| 0.8564 |
+=======
+|SmartCat-Labs's Git R code| ibcf| 0.64| 0.8971 |
+|| ubcf| 1.14| 0.9028 |
+>>>>>>> 6c52f7ceb1cdf47fb6169c9d99a5c7fc5836d97b
 
 <br>
 
