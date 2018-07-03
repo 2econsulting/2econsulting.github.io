@@ -24,13 +24,17 @@ repository: 2econsulting/2econsulting.github.io # ex. DONGChuan/DONGChuan.github
 # encoding type
 encoding: UTF-8
 
-## Gem
+# Gem
 gems:
   - jekyll-paginate
   - jekyll-geo-pattern
   - rouge
   - kramdown
   - jekyll-github-metadata
+
+# plugins
+plugins:
+  - jekyll-menus
 
 # Build settings
 markdown: kramdown
@@ -49,7 +53,7 @@ kramdown:
   enable_coderay: true
 
 # Disque
-disque: my_disque_settings # ex. httpdongchuangithubio.disqus.com
+# disque: my_disque_settings # ex. httpdongchuangithubio.disqus.com
 
 # Pagination
 paginate: 5
@@ -62,8 +66,12 @@ navs:
     label: Home
 
   -
-    href: /open-source
     label: Project
+    submenu:
+      - href: /open-source
+        label: open-source
+      - href: /newsletter
+        label: newsletter
 
   -
     href: /blog
