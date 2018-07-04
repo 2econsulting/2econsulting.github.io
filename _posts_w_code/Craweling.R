@@ -14,7 +14,7 @@ library(tm)
 # path <- ""
 
 # 환경, 키워드 조건 세팅 ----
-path <- "D:/2e_seo/2econsulting/"
+path <- "./2econsulting/"
 
 args = (commandArgs(TRUE))
 if(length(args)==0){
