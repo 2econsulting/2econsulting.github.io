@@ -1,4 +1,5 @@
 <script src="http://code.jquery.com/jquery.min.js"></script> 
+
 <script> 
 $(function(){ 
 	includeLayout(); 
@@ -16,17 +17,88 @@ function includeLayout(){
 	}); 
 } 
 </script>
-<script src="http://www.w3schools.com/lib/w3data.js"></script>
 
+<style>
+* {
+    box-sizing: border-box;
+}
 
-<div class="about row">
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; 
+}
 
-     <h4>아래의 표는 stackoverflow(https://stackoverflow.com) 웹사이트에서의 머신러닝, R프로그래밍과 관련된 질문들을 텍스트 마이닝 한 결과입니다.</h4> 
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
 
-    <hr>
-    <br>	
+<h2>
+	√
+	<script> document.write(new Date().toLocaleDateString());</script> 
+	DATA SCIENCE NEWS
+</h2>
 
-    <img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/chart.png">>
+<br>
 
+<div class="row">
+	
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Kaggle Blog</h4>
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Data Camp</h4>
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Analytics Vidhya</h4>
+	</div>
+	
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Machine Learning Mastery</h4>
+	</div>
 
 </div>
+
+<br>
+
+<br>
+
+<h2>
+	√
+	<script> document.write(new Date().toLocaleDateString());</script>
+	Data Science Keywords
+</h2>
+
+<br>
+
+<div class="row">
+	
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Kaggle Blog</h4>	
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Data Camp</h4>
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+      <h4>Analytics Vidhya</h4>
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+      <h4>Machine Learning Mastery</h4>
+	</div>
+
+</div>
+
+
+
+

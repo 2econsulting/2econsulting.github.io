@@ -1,6 +1,6 @@
 ---
 layout: page
-title: newsletter (작업 중..)
+title: Data Science Newsletter (작업 중..)
 menu: newsletter
 ---
 
