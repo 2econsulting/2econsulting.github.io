@@ -1,3 +1,24 @@
+<script src="http://code.jquery.com/jquery.min.js"></script> 
+<script> 
+$(function(){ 
+	includeLayout(); 
+}); 
+
+function includeLayout(){ 
+	var includeArea = $('[data-include]'); 
+	var self, url; 
+	$.each(includeArea, function() { 
+		self = $(this); 
+		url = self.data("include"); 
+		self.load(url, function() { 
+			self.removeAttr("data-include"); 
+		}); 
+	}); 
+} 
+</script>
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+
 <div class="about row">
 
     <div class="col-md-8">
@@ -5,5 +26,16 @@
         <h4>아래의 표는 stackoverflow(https://stackoverflow.com) 웹사이트에서의 머신러닝, R프로그래밍과 관련된 질문들을 텍스트 마이닝 한 결과입니다.</h4> 
 
     </div>
+
+    <br>
+	
+    <div>
+    	<img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/chart.png">>
+    </div>
+
+    <div data-include="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/table.html" class="col-md-6" style="height:100%">
+    </div>
+
+    <br>
 
 </div>
