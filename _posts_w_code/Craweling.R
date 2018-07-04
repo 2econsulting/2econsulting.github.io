@@ -112,7 +112,7 @@ total_result <- as.data.table(total_result)
 total_result <- total_result[stringr::str_detect(total_result$time, 'hour') == TRUE,]
 
 filename <- paste0(path,"data/newsletter/input/",gsub("-", "", substr(Sys.time(), 1, 10)),".csv")
-write.csv(total_result, filename)
+write.csv(total_result, filename, row.names = FALSE)
 
 # 시각화(표와 차트) ----
 # Frequency table
@@ -128,7 +128,7 @@ tdm <- TermDocumentMatrix(corpus)
 freq_words <- colnames(t(findMostFreqTerms(dtm, n = 10, INDEX = rep(1, dtm$nrow))[[1]]))
 freq_words
 
-m <- t(as.matrix(dtm)) # 또는 as.matrix(tdm)
+m <- t(as.matrix(dtm)) 
 freq_table <- data.frame(term = rownames(m), 
                          freq = rowSums(m), 
                          row.names = NULL)
@@ -136,40 +136,30 @@ freq_table <- freq_table[order(-freq_table$freq),][1:10,]
 rownames(freq_table) <- 1:nrow(freq_table)
 
 # Save
-dfname_html <- paste0(path,"data/newsletter/output/",gsub("-", "", substr(Sys.time(), 1, 10)),"_table",".html")
-R2HTML::HTML(freq_table,file= dfname_html)
+dfname_html <- paste0(path,"data/newsletter/output/",gsub("-", "", substr(Sys.time(), 1, 10)),"_table",".csv")
+write.csv(freq_table, dfname_html, row.names = FALSE)
 Sys.sleep(1)
-
-# Display
-dfname_html <- paste0(path,"table",".html")
-if (file.exists(dfname_html)) file.remove(dfname_html)
-R2HTML::HTML(freq_table,file= dfname_html)
 
 # Frequency bar plot
-Word <- reorder(freq_table$term, freq_table$freq)
-title <- paste0("Word Frequency Top 10", " (", substr(Sys.time(), 1, 10), " )")
-p <- plot_ly(
-  freq_table, 
-  x = ~freq,
-  y = ~Word,
-  name = "Word Frequency",
-  type = "bar",
-  orientation = 'h',
-  text = ~freq,
-  textposition = 'auto',
-  marker = list(color = brewer.pal(10, "Paired"))) %>% 
-  layout(title = title,
-         xaxis = list(title = ""),
-         yaxis = list(title = "")) 
-bar_plot <- ggplotly(p)
-bar_plot
+title <- paste0("Word Frequency Top 10", " (", substr(Sys.time(), 1, 10), " )\n")
+ggplot(freq_table, aes(x =reorder(term, freq), y = freq, fill = term)) + 
+  geom_bar(stat="identity", show.legend=F) +
+  scale_fill_hue(c=45, l=80) +
+  coord_flip() +
+  geom_text(aes(label = freq), vjust = 0.5, size = 4) +
+  labs(y = "Frequency", title = title) +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.ticks=element_blank(),
+        axis.title.y=element_blank(),
+        legend.position="none",
+        panel.background=element_blank())
 
 # Save
-chartname <- paste0(path,"data/newsletter/output/",gsub("-", "", substr(Sys.time(), 1, 10)),"_chart",".html")
-htmlwidgets::saveWidget(bar_plot, chartname)
+chartname <- paste0(path,"data/newsletter/output/",gsub("-", "", substr(Sys.time(), 1, 10)),"_chart",".png")
+ggplot2::ggsave(chartname)
 Sys.sleep(1)
 
 # Display
-chartname <- paste0(path,"chart",".html")
+chartname <- paste0(path,"chart",".png")
 if (file.exists(chartname)) file.remove(chartname)
-htmlwidgets::saveWidget(bar_plot, chartname)
+ggplot2::ggsave(chartname)
