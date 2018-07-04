@@ -1,6 +1,6 @@
 ---
 layout: page
-title: newsletter
+title: newsletter (작업 중..)
 menu: newsletter
 ---
 
