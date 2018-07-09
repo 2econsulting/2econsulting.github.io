@@ -1,10 +1,10 @@
 ---
-layout: page
-title: Analytics Request (작업 중..)
+layout: default
 menu: analytics-request
-css: ['request.css']
-javascript: ['calendar.js']
+css: ['index.css']
+javascript : ['main.js']
 ---
+
 
 {% include analytics-request.html %}
 
