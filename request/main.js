@@ -4,7 +4,7 @@ angular.module('demoApp', ['ngAnimate', 'weeklyScheduler', 'weeklySchedulerI18N'
     localeServiceProvider.configure({
       doys: {'es-es': 4},
       lang: {'es-es': {month: 'Mes', weekNb: 'número de la semana', addNew: 'Añadir'}},
-      localeLocationPattern: 'https://code.angularjs.org/1.5.8/i18n/angular-locale_{{locale}}.js'
+      localeLocationPattern: 'https://code.angularjs.org/1.5.8/i18n/angular-locale_ko-kr.js'
     });
   }])
 
@@ -15,29 +15,36 @@ angular.module('demoApp', ['ngAnimate', 'weeklyScheduler', 'weeklySchedulerI18N'
         locale: localeService.$locale.id,
         options: {/*monoSchedule: true*/},
         items: [{
-          label: '현종열',
+          label: 'DS랩 하반기 일정',
           editable: false,
+          visiable: "hidden",
           schedules: [
-            {start: moment('2015-12-27').toDate(), end: moment('2016-08-01').toDate()}
+            {start: moment('2018-06-30').toDate(), end: moment('2018-12-31').toDate()}
           ]
         }]
       };
 
       $timeout(function () {
         $scope.model.items = $scope.model.items.concat([{
-          label: 'Item 2',
+          label: '[프로젝트] ING생명',
+          editable: false,
           schedules: [
-            {start: moment('2016-05-03').toDate(), end: moment('2017-02-01').toDate()},
-            {start: moment('2015-11-20').toDate(), end: moment('2016-02-01').toDate()}
+             {start: moment('2018-08-01').toDate(), end: moment('2018-12-31').toDate()}
           ]
-        }, {
-          label: 'Item 3',
+        },{
+          label: '[연구] DS뉴스레터개발',
+          editable: false,
           schedules: [
-            {start: moment('2017-08-09').toDate(), end: moment('2017-08-21').toDate()},
-            {start: moment('2017-09-12').toDate(), end: moment('2017-10-12').toDate()}
+               {start: moment('2018-07-01').toDate(), end: moment('2018-07-15').toDate()}
+          ]
+        },{
+          label: '[연구] 캐글대회참여',
+          editable: false,
+          schedules: [
+              {start: moment('2018-07-01').toDate(), end: moment('2018-07-15').toDate()}
           ]
         }]);
-      }, 1000);
+      }, 50);
 
       this.doSomething = function (itemIndex, scheduleIndex, scheduleValue) {
         $log.debug('The model has changed!', itemIndex, scheduleIndex, scheduleValue);

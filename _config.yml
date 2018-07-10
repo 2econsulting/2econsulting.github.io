@@ -72,8 +72,8 @@ navs:
         label: open-source
       - href: /newsletter
         label: newsletter
-      - href: /analytics-request
-        label: analytics-request      
+      - href: /request/request
+        label: request      
 
   -
     href: /blog
