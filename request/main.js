@@ -32,16 +32,22 @@ angular.module('demoApp', ['ngAnimate', 'weeklyScheduler', 'weeklySchedulerI18N'
              {start: moment('2018-08-01').toDate(), end: moment('2018-12-31').toDate()}
           ]
         },{
-          label: '[연구] DS뉴스레터개발',
+          label: '[연구] DS랩 뉴스레터 개발',
           editable: false,
           schedules: [
-               {start: moment('2018-07-01').toDate(), end: moment('2018-07-15').toDate()}
+               {start: moment('2018-07-01').toDate(), end: moment('2018-07-20').toDate()}
           ]
         },{
-          label: '[연구] 캐글대회참여',
+          label: '[연구] DS랩 블로그 개발',
           editable: false,
           schedules: [
-              {start: moment('2018-07-01').toDate(), end: moment('2018-07-15').toDate()}
+               {start: moment('2018-07-01').toDate(), end: moment('2018-07-30').toDate()}
+          ]
+        },{
+          label: '[연구] Kaggle 대회 참여',
+          editable: false,
+          schedules: [
+              {start: moment('2018-07-01').toDate(), end: moment('2018-07-30').toDate()}
           ]
         }]);
       }, 50);
