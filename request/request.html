@@ -15,6 +15,7 @@
         $(document).ready(function(){
            $("#header").load("/request/header.html")
            $("#head").load("/request/head.html")
+           $("#fullcalendar").load("/request/fullcalendar-3.9.0/demos/default.html")
         });
   </script>  
 
@@ -29,8 +30,7 @@
 
     <div id="header"></div>
 
-    <div class="row" ng-controller="DemoController as demo">
-      
+    <div class="row" ng-controller="DemoController as demo">      
       <div class="col-xs-10 col-xs-offset-1" style="padding-top:150px">
 
         <div style="padding-bottom:5px; display:inline-block;"><h4>DS랩 <script>document.write(new Date().toLocaleDateString().slice(0,4));</script>년 진행 중인 연구 과제</h4><a href="/assets/files/project-request-form.pdf">분석 request 다운로드</a></div> 
@@ -39,8 +39,14 @@
           <div class="srow" style="resize:both; overflow:auto;"><p align="right">{{item.label}}</p></div>
         </weekly-scheduler>
 
-      </div>
+      </div>      
     </div>
+
+    <div id="fullcalendar"></div>
+
   </body>
 
 </html>
+
+
+

@@ -19,7 +19,7 @@ angular.module('demoApp', ['ngAnimate', 'weeklyScheduler', 'weeklySchedulerI18N'
           editable: false,
           visiable: "hidden",
           schedules: [
-            {start: moment('2018-06-30').toDate(), end: moment('2018-12-31').toDate()}
+            {start: moment('2018-06-30').toDate(), end: moment('2019-01-01').toDate()}
           ]
         }]
       };
