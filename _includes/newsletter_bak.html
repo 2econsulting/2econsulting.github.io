@@ -1,0 +1,94 @@
+<script src="http://code.jquery.com/jquery.min.js"></script> 
+
+<script> 
+$(function(){ 
+	includeLayout(); 
+}); 
+
+function includeLayout(){ 
+	var includeArea = $('[data-include]'); 
+	var self, url; 
+	$.each(includeArea, function() { 
+		self = $(this); 
+		url = self.data("include"); 
+		self.load(url, function() { 
+			self.removeAttr("data-include"); 
+		}); 
+	}); 
+} 
+</script>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; 
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+<h4>매일 최신의 Data Science News를 알려드립니다.</h4>
+<h4>뉴스 수집 사이트: Kaggle Blog, Data Camp, Analytics Vidhya, Machine Learning Mastery</h4>
+<h4>뉴스 수집 주기: 일요일 0시 Weekly Batch Update</h4>
+
+<br>
+
+<h2>
+	√
+	<script> document.write(new Date().toLocaleDateString());</script> 
+	DATA SCIENCE NEWS TITLE & KEYWORD
+</h2>
+
+<br>
+
+<div class="row">
+	
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Kaggle Blog NEWS TITLE</h4>
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Kaggle Blog NEWS KEYWORD</h4>
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Data Camp NEWS TITLE</h4>
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Data Camp NEWS KEYWORD</h4>
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Analytics Vidhya NEWS TITLE</h4>
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Analytics Vidhya NEWS KEYWORD</h4>
+	</div>
+	
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Machine Learning Mastery NEWS TITLE</h4>
+	</div>
+
+	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	  <h4>Machine Learning Mastery NEWS KEYWORD</h4>
+	</div>
+
+</div>
+
+<br>
+
+
