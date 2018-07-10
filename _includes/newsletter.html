@@ -31,6 +31,19 @@ function includeLayout(){
     height: 300px; 
 }
 
+.column1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 400px;
+}
+    .column2 {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: 400px;
+}
+
 /* Clear floats after the columns */
 .row:after {
     content: "";
@@ -79,12 +92,18 @@ function includeLayout(){
 	  <h4>Analytics Vidhya NEWS KEYWORD</h4>
 	</div>
 	
-	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	<div class="column1">
 	  <h4>Machine Learning Mastery NEWS TITLE</h4>
+	    <div>
+            <div data-include="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/input/html/mastery_out.html"></div>
+        </div>
 	</div>
 
-	<div class="column" style='background-image: url("https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/news.jpg");background-repeat:no-repeat; background-size:cover;'>
+	<div class="column2">
 	  <h4>Machine Learning Mastery NEWS KEYWORD</h4>
+	    <div style="margin:0px auto">
+        <div data-include="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/input/html/mastery_table.html"></div>
+        </div>
 	</div>
 
 </div>
