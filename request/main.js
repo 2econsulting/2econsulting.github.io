@@ -49,6 +49,12 @@ angular.module('demoApp', ['ngAnimate', 'weeklyScheduler', 'weeklySchedulerI18N'
           schedules: [
               {start: moment('2018-07-01').toDate(), end: moment('2018-07-30').toDate()}
           ]
+        },{
+          label: '[연구] 추천 시스템 Seldon 리뷰',
+          editable: false,
+          schedules: [
+              {start: moment('2018-07-01').toDate(), end: moment('2018-07-30').toDate()}
+          ]
         }]);
       }, 50);
 
