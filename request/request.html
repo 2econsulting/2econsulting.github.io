@@ -33,10 +33,10 @@
       
       <div class="col-xs-10 col-xs-offset-1" style="padding-top:150px">
 
-        <div style="padding-bottom:10px"><a href="/assets/files/2e_profile_2018_v0.99_KOR.pdf" >분석 request 다운로드</a></div> 
+        <div style="padding-bottom:10px; display:inline-block;"><h4>DS랩 2018년 하반기 진행 중인 연구 과제</h4><a href="/assets/files/2e_profile_2018_v0.99_KOR.pdf" >분석 request 다운로드</a></div> 
 
         <weekly-scheduler class="scheduler" items="model.items" on-change="demo.doSomething" on-delete="demo.doSomething" options="model.options">
-          <div class="srow"><p align="right">{{item.label}}</p></div>
+          <div class="srow" style="resize:both; overflow:auto;"><p align="right">{{item.label}}</p></div>
         </weekly-scheduler>
 
       </div>
