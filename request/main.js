@@ -27,31 +27,31 @@ angular.module('demoApp', ['ngAnimate', 'weeklyScheduler', 'weeklySchedulerI18N'
       $timeout(function () {
         $scope.model.items = $scope.model.items.concat([{
           label: '[플젝] ING생명',
-          editable: false,
+          editable: true,
           schedules: [
              {start: moment('2018-08-01').toDate(), end: moment('2018-12-31').toDate()}
           ]
         },{
           label: 'DS랩 뉴스레터 개발',
-          editable: false,
+          editable: true,
           schedules: [
                {start: moment('2018-07-01').toDate(), end: moment('2018-07-20').toDate()}
           ]
         },{
           label: 'DS랩 블로그 개발',
-          editable: false,
+          editable: true,
           schedules: [
                {start: moment('2018-07-01').toDate(), end: moment('2018-07-30').toDate()}
           ]
         },{
           label: 'Kaggle 대회 참여',
-          editable: false,
+          editable: true,
           schedules: [
               {start: moment('2018-07-01').toDate(), end: moment('2018-07-30').toDate()}
           ]
         },{
           label: 'RS Seldon 리뷰',
-          editable: false,
+          editable: true,
           schedules: [
               {start: moment('2018-07-01').toDate(), end: moment('2018-07-30').toDate()}
           ]
