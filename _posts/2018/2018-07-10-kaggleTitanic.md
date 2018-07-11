@@ -45,9 +45,9 @@ Titanic Competition 경진대회에서 사용한 분석 방법은 다음과 같�
 |  R_TEST_CATBOOST_TUNE_CVP1_78.csv | 0.81339 | >0.5 |
 |  R_TEST_H2OLGB_TUNE_CVP1.csv | 0.81818 | >0.5 | 
 
-단일 모델로는 CatBoot가 0.83253으로 가장 높았습니다.
+단일 모델로는 CatBoot의 0.82296(AUC)으로 가장 높았습니다.
 
-최종적으로 CatBoost, H2O XGBoost, H2O Light GBM의 예측값을 다수결 방식으로 결합한 Stacking 모델을 사용하였습니다.
+CatBoost, H2O XGBoost, H2O Light GBM의 예측값을 다수결 방식으로 결합한 Stacking 모델은 0.83253(AUC)을 얻었습니다. 
 
 <img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/kaggle_titanic3.png" style="width: 50%">
 
