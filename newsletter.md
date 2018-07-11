@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Data Science Newsletter (작업 중..)
+title: <script> document.write(new Date().toLocaleDateString());</script> Data Science Newsletter
 menu: newsletter
+css: ['index.css','about.css']
 ---
 
 {% include newsletter.html %}
