@@ -30,7 +30,7 @@ remDr <- rD[["client"]]
 remDr$navigate(paste0("file:///", path, "wordcloud.html")) 
 remDr$navigate(paste0("file:///", path, "wordcloud.html")) 
 Sys.sleep(30)
-remDr$maxWindowSize()
+#remDr$maxWindowSize()
 fileName <- paste0("wordcloud_",gsub("-","",Sys.Date()))
 remDr$screenshot(file=paste0(path, fileName,'.png'))            
 remDr$close()

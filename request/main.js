@@ -50,10 +50,34 @@ angular.module('demoApp', ['ngAnimate', 'weeklyScheduler', 'weeklySchedulerI18N'
               {start: moment('2018-07-01').toDate(), end: moment('2018-07-30').toDate()}
           ]
         },{
-          label: 'RS Seldon 리뷰',
+          label: 'FastText 리뷰',
           editable: true,
           schedules: [
-              {start: moment('2018-07-01').toDate(), end: moment('2018-07-30').toDate()}
+              {start: moment('2018-07-16').toDate(), end: moment('2018-07-20').toDate()}
+          ]
+        },{
+          label: 'Sonnet 리뷰',
+          editable: true,
+          schedules: [
+              {start: moment('2018-07-16').toDate(), end: moment('2018-07-20').toDate()}
+          ]
+        },{
+          label: 'Facets 리뷰',
+          editable: true,
+          schedules: [
+              {start: moment('2018-07-16').toDate(), end: moment('2018-07-20').toDate()}
+          ]
+        },{
+          label: 'dialnd 리뷰',
+          editable: true,
+          schedules: [
+              {start: moment('2018-07-16').toDate(), end: moment('2018-07-30').toDate()}
+          ]
+        },{
+          label: 'Seldon 리뷰',
+          editable: true,
+          schedules: [
+              {start: moment('2018-07-16').toDate(), end: moment('2018-07-30').toDate()}
           ]
         }]);
       }, 50);

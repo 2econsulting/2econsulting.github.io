@@ -1,6 +1,6 @@
 ---
 layout: page_newsletter
-title: Data Science Newsletter
+title: <font color="black">Data Science Newsletter</font>
 menu: newsletter
 css: ['index.css','about.css']
 ---

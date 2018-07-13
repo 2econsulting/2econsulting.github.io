@@ -5,4 +5,4 @@ subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; R과 Pyt
 menu: blog
 css: ['index.css', 'blog-page.css']
 ---
-{% include blog-page.html %}
+{% include blog-page.html %}  
