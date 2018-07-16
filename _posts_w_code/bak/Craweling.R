@@ -14,7 +14,7 @@ library(tm)
 # path <- ""
 
 # 환경, 키워드 조건 세팅 ----
-path <- "./2econsulting/"
+path <- "D:/2e_seo/2econsulting/"
 
 args = (commandArgs(TRUE))
 if(length(args)==0){
@@ -136,8 +136,8 @@ freq_table <- freq_table[order(-freq_table$freq),][1:10,]
 rownames(freq_table) <- 1:nrow(freq_table)
 
 # Save
-dfname_html <- paste0(path,"data/newsletter/output/",gsub("-", "", substr(Sys.time(), 1, 10)),"_table",".csv")
-write.csv(freq_table, dfname_html, row.names = FALSE)
+dfname_name <- paste0(path,"data/newsletter/output/",gsub("-", "", substr(Sys.time(), 1, 10)),"_table",".csv")
+write.csv(freq_table, dfname_name, row.names = FALSE)
 Sys.sleep(1)
 
 # Frequency bar plot
@@ -160,6 +160,6 @@ ggplot2::ggsave(chartname)
 Sys.sleep(1)
 
 # Display
-chartname <- paste0(path,"chart",".png")
+chartname <- paste0(path,"_img/chart_sof",".png")
 if (file.exists(chartname)) file.remove(chartname)
 ggplot2::ggsave(chartname)
