@@ -17,6 +17,8 @@ no-post-nav: true
 
 
 
+
+
 #### Data Camp NEWS TITL
 
 * [Data Science at McKinsey (Transcript)](https://www.datacamp.com/community/blog/data-science-mckinsey)
@@ -29,6 +31,7 @@ no-post-nav: true
 <br>Keyword(freq): python(12), pandas(8), functions(6), libraries(6), data(5), language(5), dataframes(4), arrays(2), background(2), booleans(2)
 
 
+
 #### Analytics Vidhya NEWS TITLE
 
 * [An Introductory Guide to Maximum Likelihood Estimation (with a case study in R)](https://www.analyticsvidhya.com/blog/2018/07/introductory-guide-maximum-likelihood-estimation-case-study-r/)
@@ -36,6 +39,7 @@ no-post-nav: true
 
 * [13 Common Mistakes Amateur Data Scientists Make and How to Avoid Them?](https://www.analyticsvidhya.com/blog/2018/07/13-common-mistakes-aspiring-fresher-data-scientists-make-how-to-avoid-them/)
 <br>Keyword(freq): data(101), scientists(26), science(24), scientist(15), tools(14), model(13), article(12), competitions(12), problem(12), techniques(12)
+
 
 
 #### Machine Learning Mastery NEWS TITLE
