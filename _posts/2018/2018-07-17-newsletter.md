@@ -11,7 +11,7 @@ no-post-nav: true
 #### 데이터 사이언스 뉴스레터
 
 [wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180717.png)
-
+<br>
 #### Kaggle Blog NEWS TITL
 [Data Notes: How to Forecast the S&P 500 with Prophet](http://blog.kaggle.com/2018/07/12/data-notes-how-to-forecast-the-sp-500-with-prophet/)
 <br>Keyword(freq): link(10), data(6), dataset(5), kaggle(5), parties(4), celebfaces(2), datasets(2), extraterrestrials(2), kernels(2), markets(2)
