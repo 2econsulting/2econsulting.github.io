@@ -13,7 +13,7 @@ no-post-nav: true
 
 
 #### Kaggle Blog NEWS TITL
-* no new article
+* no new article<br>
 <br>
 #### Data Camp NEWS TITL
 
