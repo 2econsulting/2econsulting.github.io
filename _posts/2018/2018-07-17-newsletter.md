@@ -15,22 +15,16 @@ no-post-nav: true
 
 #### Kaggle Blog NEWS TITL
 
-* no new article
-
-
+* [Data Notes: How to Forecast the S&P 500 with Prophet](http://blog.kaggle.com/2018/07/12/data-notes-how-to-forecast-the-sp-500-with-prophet/)
+<br>Keyword(freq): link(10), data(6), dataset(5), kaggle(5), parties(4), celebfaces(2), datasets(2), extraterrestrials(2), kernels(2), markets(2)
 
 <br>
 
 #### Data Camp NEWS TITL
 
-* [Data Science at McKinsey (Transcript)](https://www.datacamp.com/community/blog/data-science-mckinsey)
-<br>Keyword(freq): data(197), taras(91), analytics(90), models(58), science(45), decisions(32), organizations(32), time(30), scientists(26), business(25)
+* no new article
 
-* [New Course: Machine Learning with Tree-Based Models in Python](https://www.datacamp.com/community/blog/course-machine-learning-with-tree-based-models-in-python)
-<br>Keyword(freq): trees(16), models(14), hyperparameters(6), methods(6), predictions(6), problems(6), data(4), learning(4), machine(4), model(4)
 
-* [New Course: Python for R Users](https://www.datacamp.com/community/blog/course-python-r-users)
-<br>Keyword(freq): python(12), pandas(8), functions(6), libraries(6), data(5), language(5), dataframes(4), arrays(2), background(2), booleans(2)
 
 <br>
 
