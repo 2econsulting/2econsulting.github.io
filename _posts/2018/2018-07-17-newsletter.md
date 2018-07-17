@@ -39,7 +39,7 @@ no-post-nav: true
 <br>Keyword(freq): data(52), distribution(33), parameters(30), model(22), likelihood(21), coefficients(20), function(19), tickets(16), variables(14), distributions(12)
 
 * [13 Common Mistakes Amateur Data Scientists Make and How to Avoid Them?](https://www.analyticsvidhya.com/blog/2018/07/13-common-mistakes-aspiring-fresher-data-scientists-make-how-to-avoid-them/)
-<br>Keyword(freq): data(101), scientists(26), science(24), scientist(15), tools(14), model(13), article(12), competitions(12), problem(12), techniques(12)
+<br>Keyword(freq): data(105), scientists(26), science(24), scientist(15), tools(14), model(13), article(12), competitions(12), problem(12), techniques(12)
 
 <br>
 
@@ -53,4 +53,6 @@ no-post-nav: true
 
 * [A Gentle Introduction to Effect Size Measures in Python](https://machinelearningmastery.com/effect-size-measures-in-python/)
 <br>Keyword(freq): effect(51), size(41), results(24), samples(24), methods(22), measures(18), variables(16), difference(12), pearsons(12), result(11)
+
+
 
