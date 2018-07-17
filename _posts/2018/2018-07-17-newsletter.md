@@ -11,11 +11,12 @@ no-post-nav: true
 ### Data Science Newsletter ([wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180717.png))
 
 
-#### Kaggle Blog NEWS TITL
+#### Kaggle Blog NEWS TITL<br>
 * no new article
 
+
 <br>
-#### Data Camp NEWS TITL
+#### Data Camp NEWS TITL<br>
 * [Data Science at McKinsey (Transcript)](https://www.datacamp.com/community/blog/data-science-mckinsey)
 <br>Keyword(freq): data(197), taras(91), analytics(90), models(58), science(45), decisions(32), organizations(32), time(30), scientists(26), business(25)
 
@@ -24,15 +25,17 @@ no-post-nav: true
 
 * [New Course: Python for R Users](https://www.datacamp.com/community/blog/course-python-r-users)
 <br>Keyword(freq): python(12), pandas(8), functions(6), libraries(6), data(5), language(5), dataframes(4), arrays(2), background(2), booleans(2)
+
 <br>
-#### Analytics Vidhya NEWS TITLE
+#### Analytics Vidhya NEWS TITLE<br>
 * [An Introductory Guide to Maximum Likelihood Estimation (with a case study in R)](https://www.analyticsvidhya.com/blog/2018/07/introductory-guide-maximum-likelihood-estimation-case-study-r/)
 <br>Keyword(freq): data(52), distribution(33), parameters(30), model(22), likelihood(21), coefficients(20), function(19), tickets(16), variables(14), distributions(12)
 
 * [13 Common Mistakes Amateur Data Scientists Make and How to Avoid Them?](https://www.analyticsvidhya.com/blog/2018/07/13-common-mistakes-aspiring-fresher-data-scientists-make-how-to-avoid-them/)
 <br>Keyword(freq): data(101), scientists(26), science(24), scientist(15), tools(14), model(13), article(12), competitions(12), problem(12), techniques(12)
+
 <br>
-#### Machine Learning Mastery NEWS TITLE
+#### Machine Learning Mastery NEWS TITLE<br>
 * [All of Statistics for Machine Learning](https://machinelearningmastery.com/all-of-statistics-for-machine-learning/)
 <br>Keyword(freq): statistics(54), book(27), topics(20), machine(13), data(11), chapters(10), examples(8), learning(8), methods(8), science(7)
 
