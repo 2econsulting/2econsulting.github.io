@@ -10,7 +10,7 @@ no-post-nav: true
 
 #### 데이터 사이언스 뉴스레터
 
-[wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180717.png)
+[wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180717.png)<br>
 
 
 #### Kaggle Blog NEWS TITL
