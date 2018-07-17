@@ -22,9 +22,14 @@ no-post-nav: true
 
 #### Data Camp NEWS TITL
 
-* no new article
+* [Data Science at McKinsey (Transcript)](https://www.datacamp.com/community/blog/data-science-mckinsey)
+<br>Keyword(freq): data(197), taras(91), analytics(90), models(58), science(45), decisions(32), organizations(32), time(30), scientists(26), business(25)
 
+* [New Course: Machine Learning with Tree-Based Models in Python](https://www.datacamp.com/community/blog/course-machine-learning-with-tree-based-models-in-python)
+<br>Keyword(freq): trees(16), models(14), hyperparameters(6), methods(6), predictions(6), problems(6), data(4), learning(4), machine(4), model(4)
 
+* [New Course: Python for R Users](https://www.datacamp.com/community/blog/course-python-r-users)
+<br>Keyword(freq): python(12), pandas(8), functions(6), libraries(6), data(5), language(5), dataframes(4), arrays(2), background(2), booleans(2)
 
 <br>
 
