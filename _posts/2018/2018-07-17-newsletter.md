@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2018.07.18 Data Science Newsletter
+title: 2018.07.17 Data Science Newsletter
 category: weekly report
 tags: [Machine learning, Data Science article]
 no-post-nav: true
