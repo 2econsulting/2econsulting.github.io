@@ -1,3 +1,8 @@
+# title : newsletter
+# author : Hyunseo Kim
+# depends : rvest, dplyr, stringr, data.table, R2HTML, NLP, openNLP
+
+
 get_baseHTML <- function(url){
   for (i in url){
     baseHTML <- try(read_html(i), silent = TRUE)
@@ -49,5 +54,55 @@ Month2Num <- function(timeHTML){
   return(timeHTML)
 }
 
-
+# url 접속해 text 수집(최신 글이 없으면 수집 안함) 후 .csv 와 .html 작성
+mksave_data <- function(data, data_name, start_line, advertisement){
+  for (j in 1){
+    if (nrow(data) == 0){
+      data <- data.frame(matrix(vector(), 0, 5,
+                                dimnames = list(c(), c("site", "date","headline","url_address","text"))),
+                         stringsAsFactors = FALSE)
+      data$site <- as.factor(data$site)
+      data$date <- as.Date(data$date)
+      data$headline <- as.factor(data$headline)
+      data$url_address <- as.factor(data$url_address)
+      data$text <- as.factor(data$text)
+      html <- paste0('<li>','no new article','</li>')
+      write.table(html, paste0(path_git,"input/html/",data_name,"_out.html"), row.names = FALSE, col.names = FALSE, quote = FALSE)
+    }
+    else{
+      tmp_text <- c()
+      for (url in data[["url_address"]]){
+        for (i in url){
+          tmp_base <- try(read_html(i), silent = TRUE)
+          if(inherits(tmp_base, "tye-error"))
+          {
+            tmp_base <- read_html(i)
+            next
+          }
+          print("Done")
+        }
+        tmp <- read_html(url)
+        Sys.sleep(3)
+        tmp <- html_nodes(tmp, 'p')
+        tmp <- html_text(tmp) 
+        Sys.sleep(3)
+        tmp <- tmp[start_line:(length(tmp)-advertisement)] # remove advertisement
+        tmp <- tmp[str_length(tmp)>1] # remove empty line
+        tmp <- paste(unlist(tmp), collapse =" ")
+        tmp_text <- c(tmp_text, tmp)
+        Sys.sleep(2)
+      }
+      data$text <- tmp_text
+      filename <- paste0(path_git,"input/", data_name, "_",gsub("-", "", Sys.Date()),".csv")
+      write.csv(data, filename, row.names = FALSE)
+      
+      data <- TopKeywordExtract(data)
+      html <- paste0('<ul><li><a href="',data$url_address,'">',data$headline,'</a></li></ul><p style = "margin-left: 0 px">',data$keyword,'</p>')
+      fileName <- paste0(path_git,"input/html/",data_name, "_out.html")
+      if (file.exists(fileName)) file.remove(fileName)
+      write.table(html, fileName, row.names = FALSE, col.names = FALSE, quote = FALSE)
+    }
+  }
+  return(data)
+}
 

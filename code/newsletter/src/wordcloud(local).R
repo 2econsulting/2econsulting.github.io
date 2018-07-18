@@ -1,4 +1,6 @@
-# writer : Hyunseo Kim
+# title : newsletter
+# author : Hyunseo Kim
+# depends : wordcloud, htmlwidgets, stringr, data.table, NLP, openNLP, pluralize
 
 
 # library 
@@ -8,10 +10,11 @@ library(stringr)
 library(data.table)
 library(NLP)
 library(openNLP)
+library(pluralize)
 
 # path 
-path_local <- "C:/Users/user/Documents/ds/2econsulting/newsletter/"
-path_git <- "C:/Users/user/Documents/2econsulting.github.io/data/newsletter/"
+path_local <- "https://github.com/2econsulting/2econsulting.github.io/code/newsletter/"
+path_git <- "https://github.com/2econsulting/2econsulting.github.io/data/newsletter/"
 
 # necessary function
 filename <- paste0(path_local,"src/text_mining_function.R")
@@ -33,10 +36,15 @@ freq_table <- KeywordExtract(tmp_text)
 freq_table <- as.data.table(freq_table)
 freq_table <- freq_table[!(freq_table$word %in% dictionary$rm_word), ]
 
-# img save
+# front img save
 fileName <- paste0(path_git,"input/png/wordcloud.png")
 if (file.exists(fileName)) file.remove(fileName)
 png(fileName, width = 5, height = 5, unit = 'in', res = 500)
-wordcloud(freq_table$word, freq_table$freq, min.freq = 3, max.words = 200, rot.per = 0.1, random.order = FALSE, colors = brewer.pal(8, "Dark2"), scale = c(4, 0.5))
+wordcloud(freq_table$word, freq_table$freq, min.freq = 1, max.words = 200, rot.per = 0.1, random.order = FALSE, colors = brewer.pal(8, "Dark2"), scale = c(4, 0.5))
 dev.off()
-warnings()
+
+# weekly img save
+fileName <- paste0(path_git,"output/report/wordcloud_",gsub("-", "", Sys.Date()),".png")
+png(fileName, width = 5, height = 5, unit = 'in', res = 500)
+wordcloud(freq_table$word, freq_table$freq, min.freq = 1, max.words = 200, rot.per = 0.1, random.order = FALSE, colors = brewer.pal(8, "Dark2"), scale = c(4, 0.5))
+dev.off()

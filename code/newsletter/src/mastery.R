@@ -1,4 +1,6 @@
-# writer : Hyunseo Kim
+# title : newsletter
+# author : Hyunseo Kim
+# depends : rvest, dplyr, stringr, data.table, R2HTML, NLP, openNLP
 
 
 # machine learning mastery ----
@@ -29,51 +31,7 @@ mastery <- as.data.table(unique(mastery))
 # Get the valid information 
 mastery <- mastery[from < mastery$date & to >= mastery$date, ]
 
-# Collect the data from valid url
-for (j in 1){
-  if (nrow(mastery) == 0){
-    mastery <- data.frame(matrix(vector(), 0, 5,
-                                 dimnames = list(c(), c("site", "date","headline","url_address","text"))),
-                          stringsAsFactors = FALSE)
-    mastery$site <- as.factor(mastery$site)
-    mastery$date <- as.Date(mastery$date)
-    mastery$headline <- as.factor(mastery$headline)
-    mastery$url_address <- as.factor(mastery$url_address)
-    mastery$text <- as.factor(mastery$text)
-    html <- paste0('<li>','no new article','</li>')
-    write.table(html, paste0(path_git,"input/html/mastery_out.html"), row.names = FALSE, col.names = FALSE, quote = FALSE)
-    rm(timeHTML, titleHTML, urlHTML, html, j)
-  }
-  else{
-    tmp_text <- c()
-    for (url in mastery[["url_address"]]){
-      for (i in url){
-        tmp_base <- try(read_html(i), silent = TRUE)
-        if(inherits(tmp_base, "tye-error"))
-        {
-          tmp_base <- read_html(i)
-          next
-        }
-        print("Done")
-      }
-      tmp <- read_html(url)
-      Sys.sleep(3)
-      tmp <- html_nodes(tmp, 'p') 
-      tmp <- html_text(tmp) 
-      Sys.sleep(3)
-      tmp <- tmp[2:(length(tmp)-7)] # remove advertisement
-      tmp <- tmp[str_length(tmp)>1] # remove empty line
-      tmp <- paste(unlist(tmp), collapse =" ")
-      tmp_text <- c(tmp_text, tmp)
-      Sys.sleep(2)
-    }
-    mastery$text <- tmp_text
-    filename <- paste0(path_git,"input/mastery_",gsub("-", "", substr(Sys.time(), 1, 10)),".csv")
-    write.csv(mastery, filename, row.names = FALSE)
-    
-    html <- paste0('<ul><li><a href="',mastery$url_address,'">',mastery$headline,'</a></li></ul>')
-    write.table(html, paste0(path_git,"input/html/mastery_out.html"), row.names = FALSE, col.names = FALSE, quote = FALSE)
-    rm(baseHTML, timeHTML, titleHTML, urlHTML, tmp, tmp_base, tmp_text, url, i, j, html)
-  }
-}
+# Save .csv & .html after collecting the data from valid url(different condition among sites)
+mastery <- mksave_data(mastery, "mastery", 2, 7)
+
 gc()

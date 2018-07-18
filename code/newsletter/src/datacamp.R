@@ -1,4 +1,6 @@
-# writer : Hyunseo Kim
+# title : newsletter
+# author : Hyunseo Kim
+# depends : rvest, dplyr, stringr, data.table, R2HTML, NLP, openNLP
 
 
 # datacamp blog ----
@@ -40,51 +42,7 @@ datacamp <- as.data.table(unique(datacamp))
 # Get the valid information 
 datacamp <- datacamp[from < datacamp$date & to >= datacamp$date, ]
 
-# Collect the data from valid url
-for (j in 1){
-  if (nrow(datacamp) == 0){
-    datacamp <- data.frame(matrix(vector(), 0, 5,
-                                  dimnames = list(c(), c("site", "date","headline","url_address","text"))),
-                           stringsAsFactors = FALSE)
-    datacamp$site <- as.factor(datacamp$site)
-    datacamp$date <- as.Date(datacamp$date)
-    datacamp$headline <- as.factor(datacamp$headline)
-    datacamp$url_address <- as.factor(datacamp$url_address)
-    datacamp$text <- as.factor(datacamp$text)
-    html <- paste0('<li>','no new article','</li>')
-    write.table(html, paste0(path_git,"input/html/datacamp_out.html"), row.names = FALSE, col.names = FALSE, quote = FALSE)
-    rm(timeHTML, titleHTML, urlHTML, html, i, j)
-  }
-  else {
-    tmp_text <- c()
-    for (url in datacamp[["url_address"]]){
-      for (i in url){
-        tmp_base <- try(read_html(i), silent = TRUE)
-        if(inherits(tmp_base, "tye-error"))
-        {
-          tmp_base <- read_html(i)
-          next
-        }
-        print("Done")
-      }
-      tmp <- read_html(url)
-      Sys.sleep(3)
-      tmp <- html_nodes(tmp, 'p') 
-      tmp <- html_text(tmp) 
-      Sys.sleep(3)
-      tmp <- tmp[str_length(tmp)>1] # remove empty line
-      tmp <- tmp[2:(length(tmp))] # remove advertisement
-      tmp <- paste(unlist(tmp), collapse =" ")
-      tmp_text <- c(tmp_text, tmp)
-      Sys.sleep(3)
-    }
-    datacamp$text <- tmp_text
-    filename <- paste0(path_git,"input/datacamp_",gsub("-", "", substr(Sys.time(), 1, 10)),".csv")
-    write.csv(datacamp, filename, row.names = FALSE)
-    
-    html <- paste0('<ul><li><a href="',datacamp$url_address,'">',datacamp$headline,'</a></li></ul>')
-    write.table(html, paste0(path_git,"input/html/datacamp_out.html"), row.names = FALSE, col.names = FALSE, quote = FALSE)
-    rm(baseHTML, timeHTML, titleHTML, urlHTML, tmp, tmp_base, tmp_text, url, i, j, html, url_list)
-  }
-}
+# Save .csv & .html after collecting the data from valid url(different condition among sites)
+datacamp <- mksave_data(datacamp, "datacamp", 2, 0)
+
 gc()

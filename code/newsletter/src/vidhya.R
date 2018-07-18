@@ -1,5 +1,6 @@
-# writer : Hyunseo Kim
-
+# title : newsletter
+# author : Hyunseo Kim
+# depends : rvest, dplyr, stringr, data.table, R2HTML, NLP, openNLP
 
 # analyticsvidhya ----
 
@@ -39,51 +40,7 @@ vidhya <- as.data.table(unique(vidhya))
 # Get the valid information 
 vidhya <- vidhya[from < vidhya$date & to >= vidhya$date, ]
 
-# Collect the data from valid url(different condition among sites)
-for (j in 1){
-  if (nrow(vidhya) == 0){
-    vidhya <- data.frame(matrix(vector(), 0, 5,
-                                dimnames = list(c(), c("site", "date","headline","url_address","text"))),
-                         stringsAsFactors = FALSE)
-    vidhya$site <- as.factor(vidhya$site)
-    vidhya$date <- as.Date(vidhya$date)
-    vidhya$headline <- as.factor(vidhya$headline)
-    vidhya$url_address <- as.factor(vidhya$url_address)
-    vidhya$text <- as.factor(vidhya$text)
-    html <- paste0('<li>','no new article','</li>')
-    write.table(html, paste0(path_git,"input/html/vidhya_out.html"), row.names = FALSE, col.names = FALSE, quote = FALSE)
-    rm(baseHTML, timeHTML, titleHTML, urlHTML, html, j)
-  }
-  else{
-    tmp_text <- c()
-    for (url in vidhya[["url_address"]]){
-      for (i in url){
-        tmp_base <- try(read_html(i), silent = TRUE)
-        if(inherits(tmp_base, "tye-error"))
-        {
-          tmp_base <- read_html(i)
-          next
-        }
-        print("Done")
-      }
-      tmp <- read_html(i)
-      Sys.sleep(3)
-      tmp <- html_nodes(tmp, 'p')
-      tmp <- html_text(tmp) 
-      Sys.sleep(3)
-      tmp <- tmp[1:(length(tmp)-11)] # remove advertisement
-      tmp <- tmp[str_length(tmp)>1] # remove empty line
-      tmp <- paste(unlist(tmp), collapse =" ")
-      tmp_text <- c(tmp_text, tmp)
-      Sys.sleep(2)
-    }
-    vidhya$text <- tmp_text
-    filename <- paste0(path_git,"input/vidhya_",gsub("-", "", substr(Sys.time(), 1, 10)),".csv")
-    write.csv(vidhya, filename, row.names = FALSE)
-    
-    html <- paste0('<ul><li><a href="',vidhya$url_address,'">',vidhya$headline,'</a></li></ul>')
-    write.table(html, paste0(path_git,"input/html/vidhya_out.html"), row.names = FALSE, col.names = FALSE, quote = FALSE)
-    rm(baseHTML, timeHTML, titleHTML, urlHTML, tmp, tmp_base, tmp_text, url, i, j, html)
-  }
-}
+# Save .csv & .html after collecting the data from valid url(different condition among sites)
+vidhya <- mksave_data(vidhya, "vidhya", 1, 11)
+
 gc()
