@@ -6,7 +6,8 @@ tags: [Machine learning, Data Science article]
 no-post-nav: true
 ---
 
-Data Science Newsletter ([wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180717.png))
+2018.07.17 Data Science Newsletter
+[wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180717.png)
 
 
 <br>
