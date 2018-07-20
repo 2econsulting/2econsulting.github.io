@@ -7,6 +7,9 @@ no-post-nav: true
 ---
 
 2018.07.17 Data Science Newsletter
+
+<br>
+
 [wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180717.png)
 
 
