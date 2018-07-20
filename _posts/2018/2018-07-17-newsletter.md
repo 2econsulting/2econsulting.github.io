@@ -6,7 +6,7 @@ tags: [Machine learning, Data Science article]
 no-post-nav: true
 ---
 
-2018.07.17. µ¥ÀÌÅÍ »çÀÌ¾ğ½º ´º½º·¹ÅÍ ([wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180717.png))
+2018.07.17. ë°ì´í„° ì‚¬ì´ì–¸ìŠ¤ ë‰´ìŠ¤ë ˆí„° ([wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180717.png))
 
 <br>
 
