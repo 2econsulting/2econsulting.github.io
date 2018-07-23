@@ -13,7 +13,7 @@ company: 투이컨설팅
 company_url: http://www.2e.co.kr
 github_url: https://github.com/2econsulting # ex. https://github.com/DONGChuan
 github_username: 2econsulting # ex. DONGChuan
-favicon: favicon.png # Image must be in assets/images
+favicon: favicon.ico # Image must be in assets/images
 repository: 2econsulting/2econsulting.github.io # ex. DONGChuan/DONGChuan.github.io
 
 # The base hostname & protocol for your site
