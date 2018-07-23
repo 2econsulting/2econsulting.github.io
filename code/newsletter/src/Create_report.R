@@ -1,4 +1,4 @@
-# title : Make weekly report
+# title : Write weekly report
 # author : Hyunseo Kim
 
 
