@@ -6,7 +6,7 @@ tags: [Machine learning, Data Science article]
 no-post-nav: true
 ---
 
-2018.07.21. 데이터 사이언스 뉴스레터 ([wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180721.png))
+데이터 사이언스 뉴스레터 ([wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180721.png))
 
 <br>
 
