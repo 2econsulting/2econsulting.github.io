@@ -1,4 +1,4 @@
-# title : newsletter
+# title : Make weekly report
 # author : Hyunseo Kim
 
 
