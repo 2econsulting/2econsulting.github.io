@@ -45,6 +45,7 @@ dev.off()
 
 # weekly img save
 fileName <- paste0(path_git,"output/report/wordcloud_",gsub("-", "", Sys.Date()),".png")
+if (file.exists(fileName)) file.remove(fileName)
 png(fileName, width = 5, height = 5, unit = 'in', res = 500)
 wordcloud(freq_table$word, freq_table$freq, min.freq = 1, max.words = 200, rot.per = 0.1, random.order = FALSE, colors = brewer.pal(8, "Dark2"), scale = c(4, 0.5))
 dev.off()
