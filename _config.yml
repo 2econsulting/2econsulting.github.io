@@ -73,7 +73,9 @@ navs:
       - href: /newsletter
         label: newsletter
       - href: /request/request
-        label: request      
+        label: request
+      - href: /master-code
+        label: master-code        
 
   -
     href: /blog
