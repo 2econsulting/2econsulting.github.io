@@ -20,9 +20,6 @@ no-post-nav: true
 
 #### Data Camp NEWS TITLE
 
-* [New Course: Data Visualization with Seaborn](https://www.datacamp.com/community/blog/course-data-visualization-seaborn)
-<br>Keyword(freq): data(3), plot(3), function(2), dataset(1), format(1), guest(1), tool(1), type(1), visualization(1), NA(NA)
-
 * [New Project: Naive Bees: Image Loading and Processing](https://www.datacamp.com/community/blog/project-naive-bees-image-loading-processing)
 <br>Keyword(freq): data(5), image(2), classifier(1), prerequisite(1), project(1), researcher(1), species(1), technique(1), transformation(1), NA(NA)
 
