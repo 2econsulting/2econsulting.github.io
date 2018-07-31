@@ -37,7 +37,7 @@
         <nav class="site-header-nav" role="navigation">
             {% for nav in site.navs %}
 
-              {% if nav.label != "Project" %}
+              {% if nav.label != "Project" and nav.label != "Schedule" %}
               <a href="{{ nav.href }}"
                  class="{% if page.menu == nav.label %} selected {% endif %} site-header-nav-item hvr-underline-from-center"
                  target="{{ nav.target | default: _self }}"
@@ -47,16 +47,30 @@
               </a>
               {% endif %} 
 
-              {% if nav.submenu %}
+
+              {% if nav.submenu1 %}
                 <div class="dropdown">
                   <a class="site-header-nav-item hvr-underline-from-center" style="color:black">Project</a>
                   <div class="dropdown-content">
-                    {% for submenu in nav.submenu %} 
-                      <a href="{{submenu.href}}">{{submenu.label}}</a>
+                    {% for submenu1 in nav.submenu1 %} 
+                      <a href="{{submenu1.href}}">{{submenu1.label}}</a>
                     {% endfor %}
                   </div>
                 </div>
               {% endif %}
+
+
+              {% if nav.submenu2 %}
+                <div class="dropdown">
+                  <a class="site-header-nav-item hvr-underline-from-center" style="color:black">Schedule</a>
+                  <div class="dropdown-content">
+                    {% for submenu2 in nav.submenu2 %} 
+                      <a href="{{submenu2.href}}">{{submenu2.label}}</a>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+
 
             {% endfor %}
         </nav>

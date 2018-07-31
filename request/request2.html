@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <script data-require="angular.js@1.6.9" data-semver="1.6.9" src="https://code.angularjs.org/1.6.9/angular.js"></script>
+  <script data-require="angular-animate.js@1.6.9" data-semver="1.6.9" src="https://code.angularjs.org/1.6.9/angular-animate.js"></script>
+  <script data-require="angular-dynamic-locale@*" data-semver="0.1.27" src="https://lgalfaso.github.io/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+  <script data-require="moment.js@*" data-semver="2.21" src="https://npmcdn.com/moment@2.14.1"></script>
+  <script src="https://cdn.rawgit.com/fmaturel/angular-weekly-scheduler/master/dist/js/ng-weekly-scheduler.js"></script>
+  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function(){
+           $("#header").load("/request/header.html")
+           $("#head").load("/request/head.html")
+           $("#jsy").load("/request/schedule/jsy.html")
+           $("#kdw").load("/request/schedule/kdw.html")
+           $("#pyn").load("/request/schedule/pyn.html")
+        });
+  </script>  
+
+  <div id="head"></div>
+
+  <section class="jumbotron" style="background-image: url(https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/red.png); padding-top:334px; background-size: 100% 100%;background-repeat:no-repeat">
+  	<div class="container">
+  	  <div class="col-md-12" style="position:absolute; top:200px;">
+        <h1>DIGITAL SCIENCE LAB 일정</h1>
+      </div>
+    </div>
+  </section>
+
+  <body ng-app="demoApp">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55499LK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="header"></div>
+
+    <div class="row" ng-controller="DemoController as demo">      
+      <div class="container">
+      	<div class="col-md-12">
+
+        <div>
+        	<h4><span class="octicon octicon-graph"></span> DIGITAL SCIENCE LAB <script>document.write(new Date().toLocaleDateString().slice(0,4));</script>년 진행 중인 연구 주제</h4>        		
+        </div> 
+
+        <weekly-scheduler class="scheduler" items="model.items" on-change="demo.doSomething" on-delete="demo.doSomething" options="model.options">
+            <div class="srow" style="resize:both; overflow:auto;"><p align="right">{{item.label}}</p></div>
+        </weekly-scheduler>
+        
+        <div>
+        	<p><a href="https://github.com/facebookresearch/fastText"> ... </a></p>   
+        </div>
+
+        <br>
+
+        <div>
+        	<h4><span class="octicon octicon-graph"></span> DIGITAL SCIENCE LAB 일정 (사진 클릭)</h4>
+
+		    <a class="hvr-grow-shadow" href="/request/schedule/hjy.html"><img style="display:inline;" src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/jsy.png"></a>
+		    <a class="hvr-grow-shadow" href="/request/schedule/hsw.html"><img style="display:inline;" src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/kdw.png"></a>
+		    <a class="hvr-grow-shadow" href="/request/schedule/khs.html"><img style="display:inline;" src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/pyn.png"></a>
+        </div>
+
+        <br>
+
+        <br>
+
+       </div>
+      </div>      
+    </div>
+
+  </body>
+
+</html>
+
+
+

@@ -67,19 +67,23 @@ navs:
 
   -
     label: Project
-    submenu:
+    submenu1:
       - href: /open-source
-        label: open-source
+        label: Open Source
       - href: /newsletter
-        label: newsletter
-      - href: /request/request
-        label: request
+        label: News Letter
+      - href: /blog
+        label: Research Title
       - href: /master-code
-        label: master-code        
+        label: Machine Learning Master Code        
 
   -
-    href: /blog
-    label: Research
+    label: Schedule
+    submenu2:
+      - href: /request/request
+        label: Data Science Lab Schedule
+      - href: /request/request2
+        label: Digital Science Lab Schedule
 
   -
     href: /todolist
