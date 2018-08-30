@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kaggle Home Credit Default Risk TOP 6% 
+title: [HOW-TO]Kaggle Home Credit Default Risk TOP 6% 
 category: [Kaggle] 
 tags: [Kaggle]
 no-post-nav: true

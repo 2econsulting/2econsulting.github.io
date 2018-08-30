@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kaggle Titanic Competition TOP 3% 안에 드는 방법
+title: [HOW-TO]Kaggle Titanic Competition TOP 3%
 category: [Kaggle] 
 tags: [Kaggle]
 no-post-nav: true
