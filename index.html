@@ -47,9 +47,9 @@ li {font-size: 15px;}
         <div class="col-md-3 text-center">
         <h4 class="sidebar-title">[[ 데이터 사이언스 뉴스레터 ]]</h4>
         <br>
-        {% for page in site.newsletters reversed %}
+        {% for newsletter in site.categories.newsletters reversed %}
         <ul class="a">
-          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+          <li><a href="{{ site.url }}{{ newsletter.url }}">{{ newsletter.title }}</a></li>
         </ul>
         {% endfor %}
         </div>
@@ -67,6 +67,7 @@ li {font-size: 15px;}
 
             <ol class="post-list">
                 {% for post in paginator.posts %}
+                {% unless post.title contains '데이터 사이언스 뉴스레터' %}
                 <li class="post-list-item">
                     <h2 class="post-list-title">
                         <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}" style="line-height:normal;">{{ post.title }}</a>
@@ -78,11 +79,27 @@ li {font-size: 15px;}
                         <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
                     </p>
                 </li>
+                {% endunless %}
                 {% endfor %}
             </ol>
 
             <!-- Pagination -->
-            {% include pagination.html %}
+            <!--{% include pagination.html %}-->
+
+            <!-- Pagination links -->
+            <div class="pagination">
+              {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+              {% else %}
+            <span class="previous">Previous</span>
+              {% endif %}
+              <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+              {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+              {% else %}
+            <span class="next ">Next</span>
+              {% endif %}
+            </div>
 
             <!-- Comments -->
             {% include disqus-comments.html %}

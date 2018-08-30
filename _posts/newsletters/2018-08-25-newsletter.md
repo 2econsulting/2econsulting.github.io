@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2018.08.25. 데이터 사이언스 뉴스레터
-category: weekly report
+category: newsletters
 tags: [Machine learning, Data Science article]
 no-post-nav: true
 ---
