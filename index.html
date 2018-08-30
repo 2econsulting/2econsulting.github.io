@@ -47,7 +47,8 @@ li {font-size: 15px;}
         <div class="col-md-3 text-center">
         <h4 class="sidebar-title">[[ 데이터 사이언스 뉴스레터 ]]</h4>
         <br>
-        {% for newsletter in site.categories.newsletters reversed %}
+        {% assign sorted-newsletters = site.categories.newsletters | sort: 'title' | reverse %}
+        {% for newsletter in sorted-newsletters %}
         <ul class="a">
           <li><a href="{{ site.url }}{{ newsletter.url }}">{{ newsletter.title }}</a></li>
         </ul>
