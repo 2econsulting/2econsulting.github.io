@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [HOW-TO]Kaggle Titanic Competition TOP 3%
+title: Kaggle Titanic Competition TOP 3%
 category: [Kaggle] 
 tags: [Kaggle]
 no-post-nav: true

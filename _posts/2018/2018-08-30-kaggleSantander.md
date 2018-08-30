@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [HOW-TO]Kaggle Santander Value Prediction TOP 8% 
+title: Kaggle Santander Value Prediction TOP 8% 
 category: [Kaggle] 
 tags: [Kaggle]
 no-post-nav: true
