@@ -59,6 +59,10 @@ kramdown:
 paginate: 5
 paginate_path: 'page:num'
 
+# collections
+collections:
+- newsletters
+
 # Navigation. If you do not like these modules, just remove them :D
 navs:
   -
@@ -82,8 +86,8 @@ navs:
     submenu2:
       - href: /request/request
         label: Data Science Lab Schedule
-      - href: /request/request2
-        label: Digital Science Lab Schedule
+#      - href: /request/request2
+#        label: Digital Science Lab Schedule
 
   -
     href: /todolist

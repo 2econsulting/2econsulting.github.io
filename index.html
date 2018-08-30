@@ -4,6 +4,11 @@ menu: home
 css: ['index.css', 'sidebar-popular-repo.css']
 ---
 
+<style>
+ul.a {list-style-type: circle;}
+li {font-size: 15px;}
+</style>
+
 <section class="jumbotron" style="background-image: url(https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/nn.gif);background-repeat: no-repeat; background-size: 100% 100%;">
 <!--<section class="jumbotron">-->   
     <div class="container">
@@ -35,18 +40,30 @@ css: ['index.css', 'sidebar-popular-repo.css']
     </div>
 </section>
 
-<section class="content container">
+<!--<section class="content container">-->
 
     <div class="row">
 
-        <!-- Post List -->
-        <div class="col-md-8">
+        <div class="col-md-3 text-center">
+        <h4 class="sidebar-title">[[ 데이터 사이언스 뉴스레터 ]]</h4>
+        <br>
+        {% for page in site.newsletters reversed %}
+        <ul class="a">
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        </ul>
+        {% endfor %}
+        </div>
 
+        <!-- Post List -->
+        <div class="col-md-6">
+
+            <div style="margin-top: 1%">
         	<form action="/search.html" method="get">
 			  <label for="search-box"></label>
 			  <input type="text" id="search-box" name="query">
 			  <input type="submit" value="검색">
 			</form>
+            </div>
 
             <ol class="post-list">
                 {% for post in paginator.posts %}
@@ -72,10 +89,10 @@ css: ['index.css', 'sidebar-popular-repo.css']
 
         </div>
 
-        <div class="col-md-4" style="left:5%">
+        <div class="col-md-2" style="left:5%">
             {% include sidebar-popular-repo.html %}
-        </div>
+        </div>  
 
-    </div>
+    <!--</div>-->
 
 </section>
