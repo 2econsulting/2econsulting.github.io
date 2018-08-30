@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kaggle Titanic: Machine Learning from Disaster TOP 3%
+title: Kaggle Titanic Machine Learning from Disaster TOP 3%
 category: [Kaggle] 
 tags: [Kaggle]
 no-post-nav: true
