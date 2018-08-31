@@ -6,6 +6,7 @@ tags: [Kaggle]
 no-post-nav: true
 ---
 
+[competition description]
 Santander Group is asking Kagglers to help them identify the value of transactions for each potential customer. 
 
 <br>
@@ -16,7 +17,7 @@ Santander Group is asking Kagglers to help them identify the value of transactio
 <br>
 
 [modeling]
-1. light gbm
+1. single light gbm
 2. bayesian grid search 
 3. cv predict 
 4. boosting samples 

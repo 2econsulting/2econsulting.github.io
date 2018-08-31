@@ -6,6 +6,7 @@ tags: [Kaggle]
 no-post-nav: true
 ---
 
+[competition description]
 While Home Credit is currently using various statistical and machine learning methods to make these predictions, they're challenging Kagglers to help them unlock the full potential of their data. 
 
 <br>
@@ -18,7 +19,7 @@ While Home Credit is currently using various statistical and machine learning me
 <br>
 
 [modeling]
-1. many light gbm model with different dataset
+1. many light gbm models with different dataset
 2. bayesian grid search 
 3. cv predict 
 4. boosting samples 
