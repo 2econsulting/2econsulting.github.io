@@ -85,9 +85,10 @@ li {font-size: 15px;}
             </ol>
 
             <!-- Pagination -->
-            <!--{% include pagination.html %}-->
+            {% include pagination.html %}
 
             <!-- Pagination links -->
+            <!--
             <div class="pagination">
               {% if paginator.previous_page %}
             <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
@@ -101,6 +102,7 @@ li {font-size: 15px;}
             <span class="next ">Next</span>
               {% endif %}
             </div>
+            -->
 
             <!-- Comments -->
             {% include disqus-comments.html %}
