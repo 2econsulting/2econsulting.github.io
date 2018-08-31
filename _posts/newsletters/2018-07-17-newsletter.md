@@ -3,7 +3,7 @@ layout: post
 title: 2018.07.17. 데이터 사이언스 뉴스레터
 category: newsletters
 tags: [Machine learning, Data Science article]
-no-post-nav: true
+hidden: true
 ---
 
 데이터 사이언스 뉴스레터 ([wordcloud](https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/data/newsletter/output/report/wordcloud_20180717.png))
