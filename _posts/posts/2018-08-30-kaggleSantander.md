@@ -16,6 +16,8 @@ Santander Group is asking Kagglers to help them identify the value of transactio
 
 [feature engineering]
 1. leak features from kernel 
+2. statistical features (max, min, sd, median, avg)
+3. na count features by row 
 
 <br>
 
