@@ -30,7 +30,7 @@ While Home Credit is currently using various statistical and machine learning me
 
 <br>
 
-<img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/kaggle_homecredit.png" style="width: 70%">
+<img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/kaggle_homecredit.png" style="width: 30%">
 
 <br>
 

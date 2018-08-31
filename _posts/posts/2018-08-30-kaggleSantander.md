@@ -28,7 +28,7 @@ Santander Group is asking Kagglers to help them identify the value of transactio
 
 <br>
 
-<img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/kaggle_santander.png" style="width: 70%">
+<img src="https://raw.githubusercontent.com/2econsulting/2econsulting.github.io/master/_img/kaggle_santander.png" style="width: 30%">
 
 <br>
 
