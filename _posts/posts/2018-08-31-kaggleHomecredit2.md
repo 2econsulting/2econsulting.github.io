@@ -6,7 +6,7 @@ tags: [Kaggle]
 no-post-nav: true
 ---
 
-learning from arnowaczynski (top 1% with only 2 submissions). 
+learning from arnowaczynski 
 
 https://www.kaggle.com/c/home-credit-default-risk/discussion/64609
 
