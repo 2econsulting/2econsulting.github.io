@@ -29,7 +29,7 @@ angular.module('demoApp', ['ngAnimate', 'weeklyScheduler', 'weeklySchedulerI18N'
           label: '[플젝] ING생명',
           editable: true,
           schedules: [
-             {start: moment('2018-08-01').toDate(), end: moment('2018-12-31').toDate()}
+             {start: moment('2018-11-01').toDate(), end: moment('2018-12-31').toDate()}
           ]
         },{
           label: 'DS랩 뉴스레터 개발',
@@ -48,30 +48,6 @@ angular.module('demoApp', ['ngAnimate', 'weeklyScheduler', 'weeklySchedulerI18N'
           editable: true,
           schedules: [
               {start: moment('2018-07-01').toDate(), end: moment('2018-07-30').toDate()}
-          ]
-        },{
-          label: 'FastText 리뷰',
-          editable: true,
-          schedules: [
-              {start: moment('2018-07-16').toDate(), end: moment('2018-07-20').toDate()}
-          ]
-        },{
-          label: 'Sonnet 리뷰',
-          editable: true,
-          schedules: [
-              {start: moment('2018-07-16').toDate(), end: moment('2018-07-20').toDate()}
-          ]
-        },{
-          label: 'Facets 리뷰',
-          editable: true,
-          schedules: [
-              {start: moment('2018-07-16').toDate(), end: moment('2018-07-20').toDate()}
-          ]
-        },{
-          label: 'dialnd 리뷰',
-          editable: true,
-          schedules: [
-              {start: moment('2018-07-16').toDate(), end: moment('2018-07-30').toDate()}
           ]
         },{
           label: 'Seldon 리뷰',
